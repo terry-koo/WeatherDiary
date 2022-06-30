@@ -29,12 +29,6 @@ struct HourlyWeatherCardView: View {
     }
 }
 
-struct HourlyWeather {
-    let time: String
-    let icon: String
-    let temperature: String
-}
-
 struct HourlyWeatherCardView_Previews: PreviewProvider {
     static var previews: some View {
         HourlyWeatherCardView(hourlyWeather: HourlyWeather(time: "오후 11시", icon: "sunny", temperature: "26도"))
