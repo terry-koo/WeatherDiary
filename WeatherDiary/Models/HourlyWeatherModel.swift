@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HourlyWeather {
+struct HourlyWeather: Hashable {
     let time: String
     let icon: String
     let temperature: String
