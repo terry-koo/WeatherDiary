@@ -12,6 +12,7 @@
 		39C26DF0286C78030011F5FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C26DEF286C78030011F5FA /* Assets.xcassets */; };
 		39C26DF3286C78030011F5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C26DF2286C78030011F5FA /* Preview Assets.xcassets */; };
 		39C26E0B286DB70E0011F5FA /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C26E0A286DB70E0011F5FA /* DateManager.swift */; };
+		A0EB1240286DEEA50047BAA8 /* HourlyWeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB123F286DEEA50047BAA8 /* HourlyWeatherCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		39C26DEF286C78030011F5FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39C26DF2286C78030011F5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		39C26E0A286DB70E0011F5FA /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		A0EB123F286DEEA50047BAA8 /* HourlyWeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		39C26DEA286C78010011F5FA /* WeatherDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A0EB123D286DEE7D0047BAA8 /* Views */,
 				39C26E09286DB6DE0011F5FA /* Managers */,
 				39C26DEB286C78010011F5FA /* WeatherDiaryApp.swift */,
 				39C26DED286C78010011F5FA /* ContentView.swift */,
@@ -76,6 +79,22 @@
 				39C26E0A286DB70E0011F5FA /* DateManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		A0EB123D286DEE7D0047BAA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0EB123E286DEE860047BAA8 /* HourlyWeatherView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0EB123E286DEE860047BAA8 /* HourlyWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				A0EB123F286DEEA50047BAA8 /* HourlyWeatherCardView.swift */,
+			);
+			path = HourlyWeatherView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +169,7 @@
 			files = (
 				39C26DEE286C78010011F5FA /* ContentView.swift in Sources */,
 				39C26E0B286DB70E0011F5FA /* DateManager.swift in Sources */,
+				A0EB1240286DEEA50047BAA8 /* HourlyWeatherCardView.swift in Sources */,
 				39C26DEC286C78010011F5FA /* WeatherDiaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
