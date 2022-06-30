@@ -9,9 +9,15 @@ import Foundation
 
 class DateManager {
     
-    func getToday() -> String {
+    func getTodayDate() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
+        return formatter.string(from: Date())
+    }
+    
+    func getTodayDateTime() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M월 d일 EEEE a h시 m분"
         return formatter.string(from: Date())
     }
 }

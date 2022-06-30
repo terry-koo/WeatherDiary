@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    var date: DateManager = DateManager()
     var body: some View {
-        Text("Hello, world!")
+        Text(date.getTodayDateTime())
             .padding()
     }
 }
