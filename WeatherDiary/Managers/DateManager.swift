@@ -20,4 +20,10 @@ class DateManager {
         formatter.dateFormat = "M월 d일 EEEE a h시 m분"
         return formatter.string(from: Date())
     }
+    
+    func getCurrentTime() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh"
+        return formatter.string(from: Date())
+    }
 }
