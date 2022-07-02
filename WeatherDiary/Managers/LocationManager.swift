@@ -16,6 +16,22 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         manager.delegate = self
+        checkLocationAuthorization()
+    }
+    
+    func checkLocationAuthorization() {
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .restricted:
+            print("Your Location is restricted.")
+        case .denied:
+            print("You have denied this app location permission.")
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        @unknown default:
+            break
+        }
     }
     
     func requestLocation() {
