@@ -42,7 +42,7 @@ class HourlyWeatherManager {
             }
             
             if condition != "" && temperature != "" && rainProbabillity != "" && sky != "" {
-                hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky, icon: "sunny"))
+                hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky))
                 condition = ""
                 temperature = ""
                 sky = ""

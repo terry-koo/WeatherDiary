@@ -13,7 +13,15 @@ struct HourlyWeather: Hashable {
     let rainProbabillity: String
     let condition: String
     let sky: String
-    var icon: String
+    var icon: String {
+        if rainProbabillity != "0" {
+            return "sunny" // 날씨 아이콘 추가되면 "rainy" 로 변경
+        } else if sky == "4" {
+            return "sunny" // 날씨 아이콘 추가되면 "cloudy" 로 변경
+        } else {
+            return "sunny"
+        }
+    }
 }
 
 struct ResponseForHourlyWeather: Codable {
