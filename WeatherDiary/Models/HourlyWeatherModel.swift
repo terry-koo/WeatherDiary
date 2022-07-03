@@ -11,6 +11,9 @@ struct HourlyWeather: Hashable {
     let time: String
     let icon: String
     let temperature: String
+    let rainProbabillity: String
+    let condition: String
+    
 }
 
 struct ResponseForHourlyWeather: Codable {
@@ -35,6 +38,7 @@ struct ResponseForHourlyWeather: Codable {
         let category: String
         let fcstDate: String
         let fcstTime: String
+        let fcstValue: String
         let nx: Int
         let ny: Int
     }
