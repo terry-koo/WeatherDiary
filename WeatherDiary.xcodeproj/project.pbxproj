@@ -13,6 +13,7 @@
 		39C26DF3286C78030011F5FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C26DF2286C78030011F5FA /* Preview Assets.xcassets */; };
 		39C26E0B286DB70E0011F5FA /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C26E0A286DB70E0011F5FA /* DateManager.swift */; };
 		39D6D17C2871981A00C5793E /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6D17B2871981A00C5793E /* CurrentWeatherModel.swift */; };
+		39D6D17E2871987200C5793E /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6D17D2871987200C5793E /* WeatherManager.swift */; };
 		A0E06B9028703BB2002521D5 /* Extensions+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E06B8F28703BB2002521D5 /* Extensions+URL.swift */; };
 		A0E06B9228704194002521D5 /* HourlyWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E06B9128704194002521D5 /* HourlyWeatherManager.swift */; };
 		A0E06B972870ADA6002521D5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E06B962870ADA6002521D5 /* LocationManager.swift */; };
@@ -29,6 +30,7 @@
 		39C26DF2286C78030011F5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		39C26E0A286DB70E0011F5FA /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		39D6D17B2871981A00C5793E /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
+		39D6D17D2871987200C5793E /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		A0E06B8F28703BB2002521D5 /* Extensions+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+URL.swift"; sourceTree = "<group>"; };
 		A0E06B9128704194002521D5 /* HourlyWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherManager.swift; sourceTree = "<group>"; };
 		A0E06B9328704B92002521D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				39C26E0A286DB70E0011F5FA /* DateManager.swift */,
 				A0E06B9128704194002521D5 /* HourlyWeatherManager.swift */,
 				A0E06B962870ADA6002521D5 /* LocationManager.swift */,
+				39D6D17D2871987200C5793E /* WeatherManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				A0E06B9028703BB2002521D5 /* Extensions+URL.swift in Sources */,
 				A0E06B9228704194002521D5 /* HourlyWeatherManager.swift in Sources */,
 				A0EB1246286DF2E60047BAA8 /* HourlyWeatherCardListView.swift in Sources */,
+				39D6D17E2871987200C5793E /* WeatherManager.swift in Sources */,
 				39C26E0B286DB70E0011F5FA /* DateManager.swift in Sources */,
 				A0EB1240286DEEA50047BAA8 /* HourlyWeatherCardView.swift in Sources */,
 				39C26DEC286C78010011F5FA /* WeatherDiaryApp.swift in Sources */,
