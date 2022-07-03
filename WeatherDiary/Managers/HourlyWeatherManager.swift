@@ -24,7 +24,7 @@ class HourlyWeatherManager {
         return decoedData
     }
     
-    func getHourlyWeather(from weatherAPI: ResponseForHourlyWeather) {
+    func getHourlyWeather(from weatherAPI: ResponseForHourlyWeather) -> [HourlyWeather] {
         let hourlyItems = weatherAPI.response.body.items.item
         var hourlyWeathers: [HourlyWeather] = []
         var condition: String = ""
@@ -50,5 +50,6 @@ class HourlyWeatherManager {
             }
         }
         
+        return hourlyWeathers
     }
 }
