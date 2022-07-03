@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HourlyWeather: Hashable {
     let time: String
-    let icon: String
     let temperature: String
     let rainProbabillity: String
     let condition: String
-    
+    let sky: String
+    var icon: String
 }
 
 struct ResponseForHourlyWeather: Codable {

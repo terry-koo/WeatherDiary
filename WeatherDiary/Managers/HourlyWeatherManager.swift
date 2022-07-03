@@ -30,19 +30,22 @@ class HourlyWeatherManager {
         var condition: String = ""
         var temperature: String = ""
         var rainProbabillity: String = ""
+        var sky: String = ""
         
         for item in hourlyItems {
             switch item.category {
             case "POP": rainProbabillity = item.fcstValue
             case "TMP": temperature = item.fcstValue
             case "PTY": condition = item.fcstValue
+            case "SKY": sky = item.fcstValue
             default: break
             }
             
-            if condition != "" && temperature != "" && rainProbabillity != "" {
-                hourlyWeathers.append(HourlyWeather(time: item.fcstTime, icon: "", temperature: temperature, rainProbabillity: rainProbabillity, condition: condition))
+            if condition != "" && temperature != "" && rainProbabillity != "" && sky != "" {
+                hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky, icon: "sunny"))
                 condition = ""
                 temperature = ""
+                sky = ""
                 rainProbabillity = ""
             }
         }
