@@ -31,6 +31,6 @@ struct HourlyWeatherCardView: View {
 
 struct HourlyWeatherCardView_Previews: PreviewProvider {
     static var previews: some View {
-        HourlyWeatherCardView(hourlyWeather: HourlyWeather(time: "오후 11시", icon: "sunny", temperature: "26도"))
+        HourlyWeatherCardView(hourlyWeather: HourlyWeather(time: "오후 11시", temperature: "28도", rainProbabillity: "0", condition: "0", sky: "3"))
     }
 }

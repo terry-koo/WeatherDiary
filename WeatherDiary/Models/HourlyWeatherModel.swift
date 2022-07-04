@@ -9,8 +9,19 @@ import SwiftUI
 
 struct HourlyWeather: Hashable {
     let time: String
-    let icon: String
     let temperature: String
+    let rainProbabillity: String
+    let condition: String
+    let sky: String
+    var icon: String {
+        if rainProbabillity != "0" {
+            return "sunny" // 날씨 아이콘 추가되면 "rainy" 로 변경
+        } else if sky == "4" {
+            return "sunny" // 날씨 아이콘 추가되면 "cloudy" 로 변경
+        } else {
+            return "sunny"
+        }
+    }
 }
 
 struct ResponseForHourlyWeather: Codable {
@@ -35,6 +46,7 @@ struct ResponseForHourlyWeather: Codable {
         let category: String
         let fcstDate: String
         let fcstTime: String
+        let fcstValue: String
         let nx: Int
         let ny: Int
     }

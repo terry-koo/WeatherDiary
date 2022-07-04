@@ -8,7 +8,7 @@
 import Foundation
 
 class HourlyWeatherManager {
-    func getHourlyWeather(date: String, baseTime: String, nx: Int, ny: Int) async throws -> ResponseForHourlyWeather {
+    func getResponseHourlyWeather(date: String, baseTime: String, nx: Int, ny: Int) async throws -> ResponseForHourlyWeather {
         guard let url = URL.forHourlyWeather(date, baseTime, nx, ny) else { fatalError("Missing URL") }
         
         let urlRequest = URLRequest(url: url)
@@ -22,5 +22,34 @@ class HourlyWeatherManager {
         let decoedData = try JSONDecoder().decode(ResponseForHourlyWeather.self, from: data)
         
         return decoedData
+    }
+    
+    func getHourlyWeather(from weatherAPI: ResponseForHourlyWeather) -> [HourlyWeather] {
+        let hourlyItems = weatherAPI.response.body.items.item
+        var hourlyWeathers: [HourlyWeather] = []
+        var condition: String = ""
+        var temperature: String = ""
+        var rainProbabillity: String = ""
+        var sky: String = ""
+        
+        for item in hourlyItems {
+            switch item.category {
+            case "POP": rainProbabillity = item.fcstValue
+            case "TMP": temperature = item.fcstValue
+            case "PTY": condition = item.fcstValue
+            case "SKY": sky = item.fcstValue
+            default: break
+            }
+            
+            if condition != "" && temperature != "" && rainProbabillity != "" && sky != "" {
+                hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky))
+                condition = ""
+                temperature = ""
+                sky = ""
+                rainProbabillity = ""
+            }
+        }
+        
+        return hourlyWeathers
     }
 }
