@@ -7,5 +7,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>나눔손글씨 반짝반짝 별.ttf</string>
+	</array>
 </dict>
 </plist>

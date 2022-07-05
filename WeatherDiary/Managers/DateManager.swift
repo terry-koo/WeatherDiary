@@ -17,7 +17,7 @@ class DateManager {
     
     func getTodayDateTime() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "M월 d일 EEEE a h시 m분"
+        formatter.dateFormat = "yyyy년 M월 d일 EEEE"
         return formatter.string(from: Date())
     }
     
