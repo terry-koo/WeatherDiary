@@ -15,76 +15,72 @@ struct CurrentWeatherView: View {
                 .font(.custom("NanumBanJjagBanJjagByeor", size: 30))
             HStack {
                 Spacer(minLength: 75)
-                ZStack {
-                    Text("포항")
-                    Text("포항")
-                        .offset(x: 1, y: 1)
-                    Text("포항")
-                        .offset(x: 2, y: 2)
-                }
+                boldText(value: "포항")
                 Spacer()
-                ZStack {
-                    Text("맑음")
-                    Text("맑음")
-                        .offset(x: 1, y: 1)
-                    Text("맑음")
-                        .offset(x: 2, y: 2)
-                }
+                boldText(value: "맑음")
                 Spacer(minLength: 75)
-            }
-            .font(.custom("NanumBanJjagBanJjagByeor", size: 80))
-        
-            HStack(alignment: .center) { // 적용 안된듯
+            } // HStack
+            HStack(alignment: .center) {
                 Spacer()
-                ZStack {
-                    HStack {
-                        Text("25")
-                            .font(.custom("NanumBanJjagBanJjagByeor", size: 120))
-                        Text("°")
-                            .font(.system(size: 30))
-                    }
-                    
-                    HStack {
-                        Text("25")
-                            .font(.custom("NanumBanJjagBanJjagByeor", size: 120))
-                        Text("°")
-                            .font(.system(size: 30))
-                    }
-                    .offset(x: 1, y: 1)
-                    
-                    HStack {
-                        Text("25")
-                            .font(.custom("NanumBanJjagBanJjagByeor", size: 120))
-                        Text("°")
-                            .font(.system(size: 30))
-                    }
-                    .offset(x: 2, y: 2)
-                    
-                }
-                
-                VStack {
-                    Text("최고")
-                        .font(.custom("NanumBanJjagBanJjagByeor", size: 30))
-                    HStack {
-                        Text("27")
-                            .font(.custom("NanumBanJjagBanJjagByeor", size: 50))
-                        Text("°")
-                            .font(.system(size: 20))
-                    }
-                }
+                boldTemp(temp: "25")
+                    .offset(x: 0, y: -10)
+                getCategorizedTemp(category: "최고", temp: "27")
                 .padding(.horizontal)
-                VStack {
-                    Text("최저")
-                        .font(.custom("NanumBanJjagBanJjagByeor", size: 30))
-                    HStack {
-                        Text("20")
-                            .font(.custom("NanumBanJjagBanJjagByeor", size: 50))
-                        Text("°")
-                            .font(.system(size: 20))
-                    }
-                }
+                getCategorizedTemp(category: "최저", temp: "20")
                 Spacer()
-            }
+            } // HStack
+        } // VStack
+    } // body
+} // CurrentWeatherView
+
+@ViewBuilder
+func boldText(value: String) -> some View {
+    ZStack {
+        Text(value)
+        Text(value)
+            .offset(x: 1, y: 1)
+        Text(value)
+            .offset(x: 2, y: 2)
+    }
+    .font(.custom("NanumBanJjagBanJjagByeor", size: 80))
+}
+
+@ViewBuilder
+func boldTemp(temp: String) -> some View {
+    ZStack {
+        HStack {
+            Text(temp)
+                .font(.custom("NanumBanJjagBanJjagByeor", size: 120))
+            Text("°")
+                .font(.system(size: 30))
+        }
+        HStack {
+            Text(temp)
+                .font(.custom("NanumBanJjagBanJjagByeor", size: 120))
+            Text("°")
+                .font(.system(size: 30))
+        }
+        .offset(x: 1, y: 1)
+        HStack {
+            Text(temp)
+                .font(.custom("NanumBanJjagBanJjagByeor", size: 120))
+            Text("°")
+                .font(.system(size: 30))
+        }
+        .offset(x: 2, y: 2)
+    }
+}
+
+@ViewBuilder
+func getCategorizedTemp(category: String, temp: String) -> some View {
+    VStack {
+        Text(category)
+            .font(.custom("NanumBanJjagBanJjagByeor", size: 30))
+        HStack {
+            Text(temp)
+                .font(.custom("NanumBanJjagBanJjagByeor", size: 50))
+            Text("°")
+                .font(.system(size: 20))
         }
     }
 }
