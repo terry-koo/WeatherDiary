@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CurrentWeatherView: View {
+    var currentWeather: CurrentWeather
     var dateManager: DateManager = DateManager()
     var body: some View {
         VStack {
@@ -22,11 +23,11 @@ struct CurrentWeatherView: View {
             } // HStack
             HStack(alignment: .center) {
                 Spacer()
-                boldTemp(temp: "25")
+                boldTemp(temp: "\(currentWeather.currentTemp!)")
                     .offset(x: 0, y: -10)
-                getCategorizedTemp(category: "최고", temp: "27")
+                getCategorizedTemp(category: "최고", temp: "\(currentWeather.highestTemp!)")
                 .padding(.horizontal)
-                getCategorizedTemp(category: "최저", temp: "20")
+                getCategorizedTemp(category: "최저", temp: "\(currentWeather.lowestTemp!)")
                 Spacer()
             } // HStack
         } // VStack
@@ -85,8 +86,8 @@ func getCategorizedTemp(category: String, temp: String) -> some View {
     }
 }
 
-struct CurrentWeatherView_Previews: PreviewProvider {
-    static var previews: some View {
-        CurrentWeatherView()
-    }
-}
+//struct CurrentWeatherView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CurrentWeatherView()
+//    }
+//}

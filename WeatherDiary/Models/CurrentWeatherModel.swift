@@ -2,42 +2,43 @@
 //  CurrentWeatherModel.swift
 //  WeatherDiary
 //
-//  Created by Terry Koo on 2022/07/03.
+//  Created by Terry Koo on 2022/07/07.
 //
 
 import Foundation
 
-// MARK: - Response
-struct Response: Codable {
-    let response: ResponseStruct
-}
-
-// MARK: - ResponseStruct
-struct ResponseStruct: Codable {
-    let header: Header
-    let body: Body
-}
-
-// MARK: - Body
-struct Body: Codable {
-    //let dataType: String
-    let items: Items
-    let pageNo, numOfRows, totalCount: Int
-}
-
-// MARK: - Items
-struct Items: Codable {
-    let item: [Item]
-}
-
-// MARK: - Item
-struct Item: Codable {
-    let baseDate, baseTime, category, fcstDate: String
-    let fcstTime, fcstValue: String
-    //let nx, ny: Int
-}
-
-// MARK: - Header
-struct Header: Codable {
-    let resultCode, resultMsg: String
+struct CurrentWeather {
+    var condition: String {
+        if Int(self.pop!)! > 50 {
+            switch self.pty {
+            case "1":
+                return "비"
+            case "2":
+                return "비/눈"
+            case "3":
+                return "눈"
+            case "4":
+                return "소나기"
+            default:
+                return "없음"
+            }
+        } else {
+            switch Int(self.sky!)! {
+            case 0..<5:
+                return "맑음"
+            case 6..<8:
+                return "구름많음"
+            case 9..<10:
+                return "흐림"
+            default:
+                return "없음"
+            }
+        }
+    }
+    var currentTemp: String?
+    var highestTemp : String?
+    var lowestTemp: String?
+    var sky: String?
+    var pty: String?
+    var pop: String?
 }
