@@ -39,6 +39,8 @@ class HourlyWeatherManager: ObservableObject {
         var sky: String = ""
         
         for item in hourlyItems {
+            guard hourlyWeathers.count < 25 else { break }
+            
             if (item.fcstDate == today && item.fcstTime >= currentTime) || item.fcstDate != today {
                 switch item.category {
                 case "POP": rainProbabillity = item.fcstValue
@@ -49,17 +51,16 @@ class HourlyWeatherManager: ObservableObject {
                 }
                 
                 if condition != "" && temperature != "" && rainProbabillity != "" && sky != "" {
-                    let fcstTime = item.fcstTime == currentTime ? "지금" : item.fcstTime
-                    hourlyWeathers.append(HourlyWeather(time: fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky))
+                    if item.fcstTime == currentTime {
+                        hourlyWeathers.append(HourlyWeather(time: "지금", temperature: temperature + "°", rainProbabillity: rainProbabillity, condition: condition, sky: sky))
+                    }
+                    hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature + "°", rainProbabillity: rainProbabillity, condition: condition, sky: sky))
                     condition = ""
                     temperature = ""
                     sky = ""
                     rainProbabillity = ""
                 }
-            } else {
-                
             }
-            
         }
         return hourlyWeathers
     }
