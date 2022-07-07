@@ -8,7 +8,7 @@
 import Foundation
 
 class HourlyWeatherManager {
-    func getResponseHourlyWeather(date: String, baseTime: String, grid: Grid) async throws -> ResponseForHourlyWeather {
+    func requestHourlyWeather(date: String, baseTime: String, grid: Grid) async throws -> [HourlyWeather] {
         guard let url = URL.forHourlyWeather(date: date, baseTime: baseTime, grid: grid) else { fatalError("Missing URL") }
         
         let urlRequest = URLRequest(url: url)
@@ -21,11 +21,11 @@ class HourlyWeatherManager {
         
         let decoedData = try JSONDecoder().decode(ResponseForHourlyWeather.self, from: data)
         
-        return decoedData
+        return self.fetchHourlyWeather(from: decoedData)
     }
     
-    func getHourlyWeather(from weatherAPI: ResponseForHourlyWeather) -> [HourlyWeather] {
-        let hourlyItems = weatherAPI.response.body.items.item
+    private func fetchHourlyWeather(from decodedDate: ResponseForHourlyWeather) -> [HourlyWeather] {
+        let hourlyItems = decodedDate.response.body.items.item
         var hourlyWeathers: [HourlyWeather] = []
         var condition: String = ""
         var temperature: String = ""
@@ -49,7 +49,6 @@ class HourlyWeatherManager {
                 rainProbabillity = ""
             }
         }
-        
         return hourlyWeathers
     }
 }
