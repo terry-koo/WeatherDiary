@@ -18,7 +18,7 @@ struct CurrentWeatherView: View {
                 Spacer(minLength: 75)
                 boldText(value: "포항")
                 Spacer()
-                boldText(value: "맑음")
+                boldText(value: "\(currentWeather.condition)")
                 Spacer(minLength: 75)
             } // HStack
             HStack(alignment: .center) {
@@ -43,6 +43,8 @@ func boldText(value: String) -> some View {
         Text(value)
             .offset(x: 2, y: 2)
     }
+    .minimumScaleFactor(0.3)
+    .lineLimit(1)
     .font(.custom("NanumBanJjagBanJjagByeor", size: 80))
 }
 
