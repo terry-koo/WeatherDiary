@@ -8,9 +8,14 @@
 import Foundation
 
 class HourlyWeatherManager {
-    func requestHourlyWeather(date: String, baseTime: String, grid: Grid) async throws -> [HourlyWeather] {
-        guard let url = URL.forHourlyWeather(date: date, baseTime: baseTime, grid: grid) else { fatalError("Missing URL") }
-        
+    let date = DateManager()
+    var today: String { date.getTodayDate() }
+    var currentTime: String { date.getCurrentTime() }
+    var baseTime: String { date.getCategorizedHour() + "00" }
+    
+    func requestHourlyWeather(grid: Grid) async throws -> [HourlyWeather] {
+        guard let url = URL.forHourlyWeather(date: today, baseTime: baseTime, grid: grid) else { fatalError("Missing URL") }
+            
         let urlRequest = URLRequest(url: url)
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
