@@ -17,8 +17,8 @@ struct HourlyWeather: Hashable {
         let formatter = DateFormatter()
         formatter.dateFormat = "HHmm"
         let temp = formatter.date(from: time)
-        formatter.dateFormat = "a HH"
-        return formatter.string(from: temp ?? Date())
+        formatter.dateFormat = "a hh"
+        return formatter.string(from: temp ?? Date()) + "시"
     }
     var icon: String {
         if rainProbabillity != "0" {

@@ -7,13 +7,14 @@
 
 import Foundation
 
-class HourlyWeatherManager {
+class HourlyWeatherManager: ObservableObject {
+    @Published var infos: [HourlyWeather] = []
     let date = DateManager()
     var today: String { date.getTodayDate() }
     var currentTime: String { date.getCategorizedTime() }
     var baseTime: String { date.getCategorizedHour() + "00" }
     
-    func requestHourlyWeather(grid: Grid) async throws -> [HourlyWeather] {
+    func requestHourlyWeather(grid: Grid) async throws -> Void {
         guard let url = URL.forHourlyWeather(date: today, baseTime: baseTime, grid: grid) else { fatalError("Missing URL") }
             
         let urlRequest = URLRequest(url: url)
@@ -26,7 +27,7 @@ class HourlyWeatherManager {
         
         let decoedData = try JSONDecoder().decode(ResponseForHourlyWeather.self, from: data)
         
-        return self.fetchHourlyWeather(from: decoedData)
+        infos = self.fetchHourlyWeather(from: decoedData)
     }
     
     private func fetchHourlyWeather(from decodedDate: ResponseForHourlyWeather) -> [HourlyWeather] {
