@@ -14,6 +14,7 @@ struct HourlyWeather: Hashable {
     let condition: String
     let sky: String
     var displayTime: String {
+        if time == "지금" { return "지금" }
         let formatter = DateFormatter()
         formatter.dateFormat = "HHmm"
         let temp = formatter.date(from: time)

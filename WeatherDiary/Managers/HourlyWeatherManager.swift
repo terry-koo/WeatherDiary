@@ -49,7 +49,8 @@ class HourlyWeatherManager: ObservableObject {
                 }
                 
                 if condition != "" && temperature != "" && rainProbabillity != "" && sky != "" {
-                    hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky))
+                    let fcstTime = item.fcstTime == currentTime ? "지금" : item.fcstTime
+                    hourlyWeathers.append(HourlyWeather(time: fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky))
                     condition = ""
                     temperature = ""
                     sky = ""
