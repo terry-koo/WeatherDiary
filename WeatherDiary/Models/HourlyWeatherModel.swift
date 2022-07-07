@@ -23,13 +23,20 @@ struct HourlyWeather: Hashable {
     }
     var icon: String {
         if rainProbabillity != "0" {
-            return "sunny" // 날씨 아이콘 추가되면 "rainy" 로 변경
-        } else if sky == "4" {
-            return "sunny" // 날씨 아이콘 추가되면 "cloudy" 로 변경
+            if rainProbabillity <= "50" {
+                return "cloud.bolt"
+            } else { return "cloud.rain" }
+        } else if sky >= "5" {
+            return "cloud" // 날씨 아이콘 추가되면 "cloudy" 로 변경
         } else {
-            return "sunny"
+            return "sun.max"
         }
-    }
+    }/*
+    1. 강수확률POP확인
+        1. 50 초과 ( 비구름 )
+            1. PTY확인
+        2. 50 이하 ( 번개구름 )
+            1. SKY확인*/
 }
 
 struct ResponseForHourlyWeather: Codable {

@@ -15,7 +15,7 @@ struct HourlyWeatherCardView: View {
         VStack {
             Text(hourlyWeather.displayTime)
                 .padding(.top, 10)
-            Image(hourlyWeather.icon)
+            Image(systemName: hourlyWeather.icon)
                 .resizable()
                 .scaledToFit()
             Text(hourlyWeather.temperature)
