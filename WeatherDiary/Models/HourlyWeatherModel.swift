@@ -27,16 +27,11 @@ struct HourlyWeather: Hashable {
                 return "cloud.bolt"
             } else { return "cloud.rain" }
         } else if sky >= "5" {
-            return "cloud" // 날씨 아이콘 추가되면 "cloudy" 로 변경
+            return "cloud"
         } else {
             return "sun.max"
         }
-    }/*
-    1. 강수확률POP확인
-        1. 50 초과 ( 비구름 )
-            1. PTY확인
-        2. 50 이하 ( 번개구름 )
-            1. SKY확인*/
+    }
 }
 
 struct ResponseForHourlyWeather: Codable {
