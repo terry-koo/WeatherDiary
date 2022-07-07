@@ -13,7 +13,7 @@ struct HourlyWeatherCardView: View {
     
     var body: some View {
         VStack {
-            Text(hourlyWeather.time)
+            Text(hourlyWeather.displayTime)
                 .padding(.top, 10)
             Image(hourlyWeather.icon)
                 .resizable()

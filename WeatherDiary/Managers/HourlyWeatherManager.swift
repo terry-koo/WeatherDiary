@@ -10,7 +10,7 @@ import Foundation
 class HourlyWeatherManager {
     let date = DateManager()
     var today: String { date.getTodayDate() }
-    var currentTime: String { date.getCurrentTime() }
+    var currentTime: String { date.getCategorizedTime() }
     var baseTime: String { date.getCategorizedHour() + "00" }
     
     func requestHourlyWeather(grid: Grid) async throws -> [HourlyWeather] {
@@ -38,21 +38,26 @@ class HourlyWeatherManager {
         var sky: String = ""
         
         for item in hourlyItems {
-            switch item.category {
-            case "POP": rainProbabillity = item.fcstValue
-            case "TMP": temperature = item.fcstValue
-            case "PTY": condition = item.fcstValue
-            case "SKY": sky = item.fcstValue
-            default: break
+            if (item.fcstDate == today && item.fcstTime >= currentTime) || item.fcstDate != today {
+                switch item.category {
+                case "POP": rainProbabillity = item.fcstValue
+                case "TMP": temperature = item.fcstValue
+                case "PTY": condition = item.fcstValue
+                case "SKY": sky = item.fcstValue
+                default: break
+                }
+                
+                if condition != "" && temperature != "" && rainProbabillity != "" && sky != "" {
+                    hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky))
+                    condition = ""
+                    temperature = ""
+                    sky = ""
+                    rainProbabillity = ""
+                }
+            } else {
+                
             }
             
-            if condition != "" && temperature != "" && rainProbabillity != "" && sky != "" {
-                hourlyWeathers.append(HourlyWeather(time: item.fcstTime, temperature: temperature, rainProbabillity: rainProbabillity, condition: condition, sky: sky))
-                condition = ""
-                temperature = ""
-                sky = ""
-                rainProbabillity = ""
-            }
         }
         return hourlyWeathers
     }

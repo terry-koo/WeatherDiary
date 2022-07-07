@@ -13,6 +13,13 @@ struct HourlyWeather: Hashable {
     let rainProbabillity: String
     let condition: String
     let sky: String
+    var displayTime: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HHmm"
+        let temp = formatter.date(from: time)
+        formatter.dateFormat = "a HH"
+        return formatter.string(from: temp ?? Date())
+    }
     var icon: String {
         if rainProbabillity != "0" {
             return "sunny" // 날씨 아이콘 추가되면 "rainy" 로 변경
