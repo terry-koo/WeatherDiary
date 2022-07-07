@@ -14,17 +14,11 @@ struct CurrentWeatherView: View {
             Text("\(dateManager.getTodayDateTime())")
                 .font(.custom("NanumBanJjagBanJjagByeor", size: 30))
             HStack {
-<<<<<<< Updated upstream
-                Spacer(minLength: 30)
-                boldText(value: "포항  맑음")
-                Spacer(minLength: 30)
-=======
                 Spacer(minLength: 75)
                 boldText(value: "포항")
                 Spacer()
                 boldText(value: "\(currentWeather.condition)")
                 Spacer(minLength: 75)
->>>>>>> Stashed changes
             } // HStack
             HStack(alignment: .center) {
                 Spacer()
