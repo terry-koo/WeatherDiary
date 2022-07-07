@@ -8,8 +8,8 @@
 import Foundation
 
 struct CurrentWeather {
-    var condition: String
-    var currentTemp: String
-    var highestTemp : String
-    var lowestTemp: String
+    var condition: String?
+    var currentTemp: String?
+    var highestTemp : String?
+    var lowestTemp: String?
 }

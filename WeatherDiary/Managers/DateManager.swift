@@ -35,11 +35,9 @@ class DateManager {
         var hour = Int(formatter.string(from: Date()))!
         
         if Int(min)! < 31 {
-            print(String(hour))
             return String(hour) + "00"
         } else {
             hour += 1
-            print(String(hour))
             return String(hour) + "00"
         }
     }
