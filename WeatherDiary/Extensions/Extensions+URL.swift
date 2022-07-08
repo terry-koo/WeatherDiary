@@ -11,6 +11,6 @@ let API_KEY = "zfUHmCouE2vnx14zqmzMMoIb%2Fe2PYANk0aPgx7MStVXdIeeGcwoPOsxfDn38UsH
 
 extension URL {
     static func forHourlyWeather(date: String, baseTime: String, grid: Grid) -> URL? {
-        return URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(API_KEY)&pageNo=1&numOfRows=240&dataType=JSON&base_date=\(date)&base_time=\(baseTime)&nx=\(grid.nx)&ny=\(grid.ny)")
+        return URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(API_KEY)&pageNo=1&numOfRows=380&dataType=JSON&base_date=\(date)&base_time=\(baseTime)&nx=\(grid.nx)&ny=\(grid.ny)")
     }
 }
