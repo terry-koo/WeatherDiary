@@ -18,7 +18,7 @@ struct CurrentWeatherView: View {
                 Spacer(minLength: 75)
                 boldText(value: "포항")
                 Spacer()
-                boldText(value: "\(currentWeather.condition)")
+                boldText(value: "\(currentWeather.condition!)")
                 Spacer(minLength: 75)
             } // HStack
             HStack(alignment: .center) {
