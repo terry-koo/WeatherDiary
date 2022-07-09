@@ -32,8 +32,8 @@ struct ResponseForWeeklyWeather: Codable {
 
     struct Item: Codable {
         let regId: String
-        let wf3Pm, wf4Pm, wf5Pm, wf6Pm, wf7Pm, wf8Pm: String
-        let rnSt3Am, rnSt4Am, rnSt5Am, rnSt6Am, rnSt7Am, rnSt8Am: Int
+        let wf3Am, wf4Pm, wf5Pm, wf6Pm, wf7Pm: String
+        let rnSt3Am, rnSt4Pm, rnSt5Pm, rnSt6Pm, rnSt7Pm: Int
     }
 }
 
