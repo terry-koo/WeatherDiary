@@ -8,7 +8,7 @@
 import Foundation
 
 struct CurrentWeather {
-    var condition: String {
+    var condition: String? {
         if Int(self.pop!)! > 50 {
             switch self.pty {
             case "1":
