@@ -20,8 +20,3 @@ struct HourlyWeatherCardListView: View {
     }
 }
 
-struct HourlyWeatherCardListView_Previews: PreviewProvider {
-    static var previews: some View {
-        HourlyWeatherCardListView(hourlyWeathers: HourlyWeatherManager().dummy)
-    }
-}

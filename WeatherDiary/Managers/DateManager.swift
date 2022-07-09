@@ -43,7 +43,7 @@ class DateManager {
     }
     
     
-    
+    // FIXME: - case "01", "02" 수정 필요
     func getCategorizedHour() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
