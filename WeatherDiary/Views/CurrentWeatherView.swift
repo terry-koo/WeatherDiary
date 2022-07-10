@@ -16,9 +16,9 @@ struct CurrentWeatherView: View {
                 .font(.custom("NanumBanJjagBanJjagByeor", size: 30))
             HStack {
                 Spacer(minLength: 75)
-                boldText(value: "포항")
+                boldText("포항")
                 Spacer()
-                boldText(value: "\(currentWeather.condition!)")
+                boldText("\(currentWeather.condition!)")
                 Spacer(minLength: 75)
             } // HStack
             HStack(alignment: .center) {
@@ -35,7 +35,7 @@ struct CurrentWeatherView: View {
 } // CurrentWeatherView
 
 @ViewBuilder
-func boldText(value: String) -> some View {
+func boldText(_ value: String) -> some View {
     ZStack {
         Text(value)
         Text(value)
@@ -88,8 +88,3 @@ func getCategorizedTemp(category: String, temp: String) -> some View {
     }
 }
 
-//struct CurrentWeatherView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CurrentWeatherView()
-//    }
-//}
