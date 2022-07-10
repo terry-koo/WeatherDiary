@@ -12,7 +12,7 @@ class WeeklyWeatherManager {
     var weeklyWeather: [WeeklyWeather] = []
     private var temporaryForecasts: [Forecast] = []
     private var temporaryTemperatures: [Temperature] = []
-    private var baseDate: String {
+    private var weeklyBaseDate: String {
         let dateManager: DateManager = DateManager()
         let yesterdayBaseDate: String = dateManager.getYesterday() + "1800"
         let firstBaseDate: String = dateManager.getTodayDate() + "0600"
@@ -29,7 +29,7 @@ class WeeklyWeatherManager {
     }
     
     func requestWeeklyWeather(regId: String) async throws -> Void {
-        guard let url = URL.forWeeklyWeather(regID: regId, date: baseDate) else { fatalError("Missing URL") }
+        guard let url = URL.forWeeklyWeather(regID: regId, date: weeklyBaseDate) else { fatalError("Missing URL") }
 
         let urlRequest = URLRequest(url: url)
 
@@ -50,7 +50,7 @@ class WeeklyWeatherManager {
     }
     
     func requestWeeklyTemperature(regId: String) async throws -> Void {
-        guard let url = URL.forWeeklyTemperature(regID: regId, date: baseDate) else { fatalError("Missing URL") }
+        guard let url = URL.forWeeklyTemperature(regID: regId, date: weeklyBaseDate) else { fatalError("Missing URL") }
 
         let urlRequest = URLRequest(url: url)
 
