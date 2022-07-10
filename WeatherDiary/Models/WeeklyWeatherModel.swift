@@ -19,21 +19,21 @@ struct Forecast: Hashable {
     let sky: String
 }
 struct Temperature: Hashable {
-    let highest: String
-    let lowest: String
+    let highest: Int
+    let lowest: Int
 }
 
 extension WeeklyWeather {
     var dummys: [WeeklyWeather] {
         [
-            WeeklyWeather(day: "월", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: "30", lowest: "20")),
+            WeeklyWeather(day: "월", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: 30, lowest: 20)),
             
-            WeeklyWeather(day: "화", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: "30", lowest: "20")),
-            WeeklyWeather(day: "수", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: "30", lowest: "20")),
-            WeeklyWeather(day: "목", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: "30", lowest: "20")),
-            WeeklyWeather(day: "금", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: "30", lowest: "20")),
-            WeeklyWeather(day: "토", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: "30", lowest: "20")),
-            WeeklyWeather(day: "일", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: "30", lowest: "20"))
+            WeeklyWeather(day: "화", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: 30, lowest: 20)),
+            WeeklyWeather(day: "수", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: 30, lowest: 20)),
+            WeeklyWeather(day: "목", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: 30, lowest: 20)),
+            WeeklyWeather(day: "금", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: 30, lowest: 20)),
+            WeeklyWeather(day: "토", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: 30, lowest: 20)),
+            WeeklyWeather(day: "일", icon: "sun.max", forecast: Forecast(rainProbability: 30, sky: "흐림"), temperature: Temperature(highest: 30, lowest: 20))
         ]
     }
 }
