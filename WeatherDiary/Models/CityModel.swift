@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct City: Identifiable {
+struct City: Identifiable, Hashable {
     var id = UUID()
-    var firstName: String = ""
-    var secondName: String = ""
-    var thirdName: String = ""
+    var fullAddress = ""
+    var firstAddress: String = ""
+    var secondAddress: String = ""
+    var thirdAddress: String = ""
     var nx: String = ""
     var ny: String = ""
 }
