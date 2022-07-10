@@ -10,6 +10,7 @@
 		3903A10F287AAE6100400F31 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3903A10E287AAE6100400F31 /* CityModel.swift */; };
 		3903A111287AB3C900400F31 /* KeyBoardExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3903A110287AB3C900400F31 /* KeyBoardExtenstion.swift */; };
 		3903A114287ABEE800400F31 /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 3903A113287ABEE800400F31 /* CSV */; };
+		3903A116287AC03400400F31 /* address.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3903A115287AC03400400F31 /* address.csv */; };
 		3926E73B2877075E00400183 /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926E73A2877075E00400183 /* CurrentWeatherModel.swift */; };
 		39961AD2287AA79B006BA4EA /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39961AD1287AA79B006BA4EA /* SearchResultView.swift */; };
 		39C26DEC286C78010011F5FA /* WeatherDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C26DEB286C78010011F5FA /* WeatherDiaryApp.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		3903A10E287AAE6100400F31 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		3903A110287AB3C900400F31 /* KeyBoardExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardExtenstion.swift; sourceTree = "<group>"; };
+		3903A115287AC03400400F31 /* address.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = address.csv; sourceTree = "<group>"; };
 		3926E73A2877075E00400183 /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
 		39961AD1287AA79B006BA4EA /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		39C26DE8286C78010011F5FA /* WeatherDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 		39C26DDF286C78010011F5FA = {
 			isa = PBXGroup;
 			children = (
+				3903A115287AC03400400F31 /* address.csv */,
 				A0FCCBE62879A06E00340BED /* key.plist */,
 				39C26DEA286C78010011F5FA /* WeatherDiary */,
 				39C26DE9286C78010011F5FA /* Products */,
@@ -272,6 +275,7 @@
 				39C26DF3286C78030011F5FA /* Preview Assets.xcassets in Resources */,
 				39D6D1852873519900C5793E /* 나눔손글씨 반짝반짝 별.ttf in Resources */,
 				39C26DF0286C78030011F5FA /* Assets.xcassets in Resources */,
+				3903A116287AC03400400F31 /* address.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
