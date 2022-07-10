@@ -154,6 +154,8 @@ class WeatherManager: ObservableObject {
             currentWeather?.lowestTemp = i.fcstValue
             break
         }
+        
+        self.weeklyMaxMinTemperature(from: decodedData)
     }
     // MARK: - Weekly Weather Functions
     func requestWeeklyWeather(regId: String) async throws -> Void {
@@ -198,13 +200,34 @@ class WeatherManager: ObservableObject {
         temporaryTemperatures.append(Temperature(highest: item.taMax7, lowest: item.taMin7))
     }
     
+    func weeklyMaxMinTemperature(from decodedData: Response) {
+        var highest: String = ""
+        var lowest: String = ""
+        var temperature: [Temperature] = []
+        
+        let weeklyItem = decodedData.response.body.items.item
+        for item in weeklyItem {
+            switch item.category {
+            case "TMX": highest = item.fcstValue
+            case "TMN": lowest = item.fcstValue
+            default: break
+            }
+            if highest != "" && lowest != "" {
+                temperature.append(Temperature(highest: Int(Double(highest) ?? 0.0), lowest: Int(Double(lowest) ?? 0)))
+                print(temperature)
+                highest = ""
+                lowest = ""
+            }
+        }
+    }
+    
     func fetchWeeklyWeather(weatherRegId: String, temperatureRegId: String) async throws -> Void {
         
         do {
             try await requestWeeklyWeather(regId: weatherRegId)
             try await requestWeeklyTemperature(regId: temperatureRegId)
         } catch {
-            print("errorroror")
+            print("Weekly Weather Fetch Error")
         }
         
         for index in temporaryForecasts.indices {

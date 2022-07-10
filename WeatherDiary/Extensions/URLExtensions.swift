@@ -24,7 +24,7 @@ extension URL {
     }
     
     static func forHourlyWeather(date: String, baseTime: String, grid: Grid) -> URL? {
-        return URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(apiKey)&pageNo=1&numOfRows=380&dataType=JSON&base_date=\(date)&base_time=\(baseTime)&nx=\(grid.nx)&ny=\(grid.ny)")
+        return URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(apiKey)&pageNo=1&numOfRows=1000&dataType=JSON&base_date=\(date)&base_time=\(baseTime)&nx=\(grid.nx)&ny=\(grid.ny)")
     }
     
     static func forWeeklyWeather(regID: String, date: String) -> URL? {
