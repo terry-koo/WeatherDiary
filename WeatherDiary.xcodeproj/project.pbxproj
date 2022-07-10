@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3903A10F287AAE6100400F31 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3903A10E287AAE6100400F31 /* CityModel.swift */; };
 		3903A111287AB3C900400F31 /* KeyBoardExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3903A110287AB3C900400F31 /* KeyBoardExtenstion.swift */; };
+		3903A114287ABEE800400F31 /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 3903A113287ABEE800400F31 /* CSV */; };
 		3926E73B2877075E00400183 /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926E73A2877075E00400183 /* CurrentWeatherModel.swift */; };
 		39961AD2287AA79B006BA4EA /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39961AD1287AA79B006BA4EA /* SearchResultView.swift */; };
 		39C26DEC286C78010011F5FA /* WeatherDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C26DEB286C78010011F5FA /* WeatherDiaryApp.swift */; };
@@ -73,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3903A114287ABEE800400F31 /* CSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +220,9 @@
 			dependencies = (
 			);
 			name = WeatherDiary;
+			packageProductDependencies = (
+				3903A113287ABEE800400F31 /* CSV */,
+			);
 			productName = WeatherDiary;
 			productReference = 39C26DE8286C78010011F5FA /* WeatherDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 39C26DDF286C78010011F5FA;
+			packageReferences = (
+				3903A112287ABEE800400F31 /* XCRemoteSwiftPackageReference "CSV.swift" */,
+			);
 			productRefGroup = 39C26DE9286C78010011F5FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -501,6 +509,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3903A112287ABEE800400F31 /* XCRemoteSwiftPackageReference "CSV.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yaslab/CSV.swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3903A113287ABEE800400F31 /* CSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3903A112287ABEE800400F31 /* XCRemoteSwiftPackageReference "CSV.swift" */;
+			productName = CSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39C26DE0286C78010011F5FA /* Project object */;
 }
