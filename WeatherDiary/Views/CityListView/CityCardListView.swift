@@ -33,7 +33,7 @@ struct CityCardListView: View {
                 .foregroundColor(Color("LightGray"))
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search ..", text: $searchText)
+                TextField("도시 검색", text: $searchText)
             }
             .foregroundColor(.gray)
             .padding(.leading, 13)
