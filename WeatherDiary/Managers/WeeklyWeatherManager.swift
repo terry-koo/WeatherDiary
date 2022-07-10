@@ -36,7 +36,11 @@ class WeeklyWeatherManager {
         }
 
         let decoedData = try JSONDecoder().decode(ResponseForWeeklyWeather.self, from: data)
-        print(decoedData)
+        let items = decoedData.response.body.items.item
+        for item in items {
+            print(item.rnSt3Am)
+            print(item.wf3Am)
+        }
     }
     
     func requestWeeklyTemperature(regId: String) async throws -> Void {
