@@ -9,20 +9,40 @@ import SwiftUI
 
 struct CityCardListView: View {
     @State var searchText: String
+    @State private var isEditing = false
     
     var body: some View {
         VStack {
-            searchBar()
-            ScrollView(.vertical) {
-                VStack {
-                    ForEach(0..<3, id: \.self) { city in
-                        CityCardView()
-                            .padding(.bottom)
+            HStack {
+                searchBar()
+                if isEditing {
+                    Button(action: {
+                        self.isEditing = false
+                        self.searchText = ""
+                        buttonHideKeyboard()
+                    }) {
+                        Text("취소")
                     }
+                    .padding(.trailing, 10)
+                    .offset(x: -5, y: 0)
                 }
-                .padding()
+            }
+            if !isEditing {
+                ScrollView(.vertical) {
+                    VStack {
+                        ForEach(0..<3, id: \.self) { city in
+                            CityCardView()
+                                .padding(.bottom)
+                        }
+                    }
+                    .padding()
+                }
+            } else {
+                SearchResultView(searchText: $searchText)
+                Spacer()
             }
         }
+        .onAppear (perform : UIApplication.shared.hideKeyboard)
     } // body
     
     
@@ -34,6 +54,7 @@ struct CityCardListView: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                 TextField("도시 검색", text: $searchText)
+                    .foregroundColor(.black)
             }
             .foregroundColor(.gray)
             .padding(.leading, 13)
@@ -41,12 +62,17 @@ struct CityCardListView: View {
             .frame(height: 40)
             .cornerRadius(13)
             .padding()
+            .onTapGesture {
+                self.isEditing = true
+            }
     }
     
 }
+ 
 
 struct CityCardListView_Previews: PreviewProvider {
     static var previews: some View {
         CityCardListView(searchText: "포항")
     }
 }
+
