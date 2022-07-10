@@ -8,27 +8,34 @@
 import Foundation
 
 class DateManager {
+    let formatter = DateFormatter()
     
     func getTodayDate() -> String {
-        let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
         return formatter.string(from: Date())
     }
     
+    func getYesterday() -> String {
+        formatter.dateFormat = "yyyyMMdd"
+        return formatter.string(from: Date() - 86400) // 1day = 86400sec
+    }
+    // 이 함수를 getTodayDateTime으로 바꾸고
+    func getToday() -> String {
+        formatter.dateFormat = "yyyyMMddHHmm"
+        return formatter.string(from: Date())
+    }
+    // 이 함수명은 getTodayDateDay로 바꿔야 할 듯
     func getTodayDateTime() -> String {
-        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy년 M월 d일 EEEE"
         return formatter.string(from: Date())
     }
     
     func getCurrentTime() -> String {
-        let formatter = DateFormatter()
         formatter.dateFormat = "HHmm"
         return formatter.string(from: Date())
     }
     
     func getCategorizedTime() -> String {
-        let formatter = DateFormatter()
         formatter.dateFormat = "mm"
         let min = formatter.string(from: Date())
         formatter.dateFormat = "HH"
@@ -45,7 +52,6 @@ class DateManager {
     
     // FIXME: - case "01", "02" 수정 필요
     func getCategorizedHour() -> String {
-        let formatter = DateFormatter()
         formatter.dateFormat = "HH"
         
         switch formatter.string(from: Date()) {

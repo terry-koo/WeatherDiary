@@ -26,4 +26,12 @@ extension URL {
     static func forHourlyWeather(date: String, baseTime: String, grid: Grid) -> URL? {
         return URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(apiKey)&pageNo=1&numOfRows=380&dataType=JSON&base_date=\(date)&base_time=\(baseTime)&nx=\(grid.nx)&ny=\(grid.ny)")
     }
+    
+    static func forWeeklyWeather(regID: String, date: String) -> URL? {
+        return URL(string: "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&dataType=JSON&regId=\(regID)&tmFc=\(date)") // regId=11B00000&tmFc=202207090600
+    }
+    
+    static func forWeeklyTemperature(regID: String, date: String) -> URL? {
+        return URL(string: "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&dataType=JSON&regId=\(regID)&tmFc=\(date)")
+    }
 }
