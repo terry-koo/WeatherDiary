@@ -15,8 +15,8 @@ struct WeeklyWeatherListRowView: View {
                 Text(weeklyWeather.day)
                 Image(systemName: weeklyWeather.icon)
                 Spacer()
-                Text("최저 \(weeklyWeather.lowestTemperature)°")
-                Text("최고 \(weeklyWeather.highestTemperature)°")
+                Text("최저 \(weeklyWeather.temperature.lowest)°")
+                Text("최고 \(weeklyWeather.temperature.highest)°")
             }
             .font(.custom("NanumBanJjagBanJjagByeor", size: 25))
             .padding(.horizontal)
@@ -24,8 +24,9 @@ struct WeeklyWeatherListRowView: View {
     }
 }
 
-struct WeeklyWeatherListRowView_Previews: PreviewProvider {
+/*struct WeeklyWeatherListRowView_Previews: PreviewProvider {
     static var previews: some View {
         WeeklyWeatherListRowView(weeklyWeather: WeeklyWeather(day: "월", icon: "sun.max", highestTemperature: "30", lowestTemperature: "22"))
     }
 }
+*/

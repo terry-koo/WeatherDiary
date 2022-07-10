@@ -15,6 +15,25 @@ class WeatherManager: ObservableObject {
     var currentTime: String { date.getCategorizedTime() }
     var baseTime: String { date.getCategorizedHour() + "00" }
     
+    // MARK: - Weekly Weather Properties
+    var weeklyWeathers: [WeeklyWeather] = []
+    private var temporaryForecasts: [Forecast] = []
+    private var temporaryTemperatures: [Temperature] = []
+    private var weeklyBaseDate: String {
+        let dateManager: DateManager = DateManager()
+        let firstBaseDate: String = dateManager.getTodayDate() + "0600"
+        let secondBaseDate: String = dateManager.getTodayDate() + "1800"
+        let currentDate: String = dateManager.getToday()
+        
+        if currentDate < firstBaseDate {
+            return dateManager.getYesterday() + "1800"
+        } else if currentDate > secondBaseDate {
+            return secondBaseDate
+        } else {
+            return firstBaseDate
+        }
+    }
+    
     // MARK: - API key
     private var apiKey: String {
       get {
@@ -109,31 +128,119 @@ class WeatherManager: ObservableObject {
     
     // MARK: - 일 최고/최저 기온 메서드
     private func lowestHighestTemp(grid: Grid) async throws -> Void {
-            let dateManager: DateManager = DateManager()
+        let dateManager: DateManager = DateManager()
             
-        guard let url = URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(apiKey)&pageNo=1&numOfRows=290&dataType=JSON&base_date=\(dateManager.getTodayDate())&base_time=0200&nx=\(grid.nx)&ny=\(grid.ny)") else {
+        guard let url = URL.forLowestHighestTemperature(grid: grid, date: dateManager.getTodayDate()) else {
                 fatalError("Missing URL")
-            }
+        }
         
-            let urlRequest = URLRequest(url: url)
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        let urlRequest = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                fatalError("Error fetching weather data")
-            }
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            fatalError("Error fetching weather data")
+        }
             
-            let decodedData = try JSONDecoder().decode(Response.self, from: data)
+        let decodedData = try JSONDecoder().decode(Response.self, from: data)
 
-            // MARK: - TMX: 일 최고 기온
-            for i in decodedData.response.body.items.item.filter({ $0.category == "TMX" && $0.fcstDate == dateManager.getTodayDate() }) {
-                currentWeather?.highestTemp = i.fcstValue
-                break
+        // MARK: - TMX: 일 최고 기온
+        for i in decodedData.response.body.items.item.filter({ $0.category == "TMX" && $0.fcstDate == dateManager.getTodayDate() }) {
+            currentWeather?.highestTemp = i.fcstValue
+            break
+        }
+
+        // MARK: - TMN: 일 최저 기온
+        for i in decodedData.response.body.items.item.filter({ $0.category == "TMN" && $0.fcstDate == dateManager.getTodayDate() }) {
+            currentWeather?.lowestTemp = i.fcstValue
+            break
+        }
+        
+        self.weeklyMaxMinTemperature(from: decodedData)
+    }
+    // MARK: - Weekly Weather Functions
+    func requestWeeklyWeather(regId: String) async throws -> Void {
+        guard let url = URL.forWeeklyWeather(regID: regId, date: weeklyBaseDate) else { fatalError("Missing URL") }
+
+        let urlRequest = URLRequest(url: url)
+
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            fatalError("Error fetching weather data")
+        }
+
+        let decoedData = try JSONDecoder().decode(ResponseForWeeklyWeather.self, from: data)
+        
+        let item = decoedData.response.body.items.item[0]
+        temporaryForecasts.append(Forecast(rainProbability: item.rnSt3Am, sky: item.wf3Am))
+        temporaryForecasts.append(Forecast(rainProbability: item.rnSt4Am, sky: item.wf4Am))
+        temporaryForecasts.append(Forecast(rainProbability: item.rnSt5Am, sky: item.wf5Am))
+        temporaryForecasts.append(Forecast(rainProbability: item.rnSt6Am, sky: item.wf6Am))
+        temporaryForecasts.append(Forecast(rainProbability: item.rnSt7Am, sky: item.wf7Am))
+    }
+    
+    func requestWeeklyTemperature(regId: String) async throws -> Void {
+        guard let url = URL.forWeeklyTemperature(regID: regId, date: weeklyBaseDate) else { fatalError("Missing URL") }
+
+        let urlRequest = URLRequest(url: url)
+
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            fatalError("Error fetching weather data")
+        }
+
+        let decoedData = try JSONDecoder().decode(ResponseForWeeklyTemperature.self, from: data)
+        
+        let item = decoedData.response.body.items.item[0]
+        temporaryTemperatures.append(Temperature(highest: item.taMax3, lowest: item.taMin3))
+        temporaryTemperatures.append(Temperature(highest: item.taMax4, lowest: item.taMin4))
+        temporaryTemperatures.append(Temperature(highest: item.taMax5, lowest: item.taMin5))
+        temporaryTemperatures.append(Temperature(highest: item.taMax6, lowest: item.taMin6))
+        temporaryTemperatures.append(Temperature(highest: item.taMax7, lowest: item.taMin7))
+    }
+    
+    func weeklyMaxMinTemperature(from decodedData: Response) {
+        var highest: String = ""
+        var lowest: String = ""
+        var sky: String = ""
+        var rainProbability = ""
+        
+        let weeklyItem = decodedData.response.body.items.item
+        for item in weeklyItem {
+            switch item.category {
+            case "TMX": highest = item.fcstValue
+            case "TMN": lowest = item.fcstValue
+            case "SKY": sky = item.fcstValue
+            case "POP": rainProbability = item.fcstValue
+                // pop
+                // fcstdate
+            default: break
             }
-
-            // MARK: - TMN: 일 최저 기온
-            for i in decodedData.response.body.items.item.filter({ $0.category == "TMN" && $0.fcstDate == dateManager.getTodayDate() }) {
-                currentWeather?.lowestTemp = i.fcstValue
-                break
+            if highest != "" && lowest != "" && sky != "" && rainProbability != "" {
+                weeklyWeathers.append(WeeklyWeather(day: item.fcstDate,
+                                                    icon: "",
+                                                    forecast: Forecast(rainProbability: Int(rainProbability) ?? 0, sky: sky),
+                                                    temperature: Temperature(highest: Int(Double(highest) ?? 0.0), lowest: Int(Double(lowest) ?? 0.0))))
+                highest = ""
+                lowest = ""
+                sky = ""
+                rainProbability = ""
             }
         }
+    }
+    
+    func fetchWeeklyWeather(weatherRegId: String, temperatureRegId: String) async throws -> Void {
+        
+        do {
+            try await requestWeeklyWeather(regId: weatherRegId)
+            try await requestWeeklyTemperature(regId: temperatureRegId)
+        } catch {
+            print("Weekly Weather Fetch Error")
+        }
+        
+        for index in temporaryForecasts.indices {
+            weeklyWeathers.append(WeeklyWeather(day: "", icon: "", forecast: temporaryForecasts[index], temperature: temporaryTemperatures[index]))
+        }
+    }
 }
