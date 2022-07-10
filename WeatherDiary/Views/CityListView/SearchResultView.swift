@@ -20,11 +20,8 @@ struct SearchResultView: View {
         List(citys.filter({ searchText.isEmpty ? false : $0.firstName.contains(searchText) })) { item in
             Text(item.firstName)
         }
+        .listStyle(PlainListStyle())
     }
 }
 
-//strCity(firstName: "Meet Eddie for lunch"),uct SearchResultView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchResultView()
-//    }
-//}
+
