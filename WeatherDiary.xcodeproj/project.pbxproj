@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3903A10F287AAE6100400F31 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3903A10E287AAE6100400F31 /* CityModel.swift */; };
-		3903A111287AB3C900400F31 /* KeyBoardExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3903A110287AB3C900400F31 /* KeyBoardExtenstion.swift */; };
+		3903A111287AB3C900400F31 /* KeyBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3903A110287AB3C900400F31 /* KeyBoardExtension.swift */; };
 		3903A114287ABEE800400F31 /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 3903A113287ABEE800400F31 /* CSV */; };
-		3926D2DF287AE63200A5BDCF /* ArrayExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926D2DE287AE63200A5BDCF /* ArrayExtenstion.swift */; };
+		3926D2DF287AE63200A5BDCF /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926D2DE287AE63200A5BDCF /* ArrayExtension.swift */; };
 		3926E73B2877075E00400183 /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926E73A2877075E00400183 /* CurrentWeatherModel.swift */; };
 		398EA0EC287AC18200EC2928 /* CsvManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398EA0EB287AC18200EC2928 /* CsvManager.swift */; };
 		398EA0EF287AC74300EC2928 /* address.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3903A115287AC03400400F31 /* address.csv */; };
@@ -42,9 +42,9 @@
 
 /* Begin PBXFileReference section */
 		3903A10E287AAE6100400F31 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
-		3903A110287AB3C900400F31 /* KeyBoardExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardExtenstion.swift; sourceTree = "<group>"; };
+		3903A110287AB3C900400F31 /* KeyBoardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardExtension.swift; sourceTree = "<group>"; };
 		3903A115287AC03400400F31 /* address.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = address.csv; sourceTree = "<group>"; };
-		3926D2DE287AE63200A5BDCF /* ArrayExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtenstion.swift; sourceTree = "<group>"; };
+		3926D2DE287AE63200A5BDCF /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		3926E73A2877075E00400183 /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
 		398EA0EB287AC18200EC2928 /* CsvManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvManager.swift; sourceTree = "<group>"; };
 		39961AD1287AA79B006BA4EA /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				A0E06B8F28703BB2002521D5 /* URLExtention.swift */,
-				3903A110287AB3C900400F31 /* KeyBoardExtenstion.swift */,
-				3926D2DE287AE63200A5BDCF /* ArrayExtenstion.swift */,
+				3903A110287AB3C900400F31 /* KeyBoardExtension.swift */,
+				3926D2DE287AE63200A5BDCF /* ArrayExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 				A0EB1244286DF1F10047BAA8 /* HourlyWeatherModel.swift in Sources */,
 				39961AD2287AA79B006BA4EA /* SearchResultView.swift in Sources */,
 				39D6D18228734BDC00C5793E /* MainView.swift in Sources */,
-				3903A111287AB3C900400F31 /* KeyBoardExtenstion.swift in Sources */,
+				3903A111287AB3C900400F31 /* KeyBoardExtension.swift in Sources */,
 				3926E73B2877075E00400183 /* CurrentWeatherModel.swift in Sources */,
 				A0FCCBEB2879FEC700340BED /* WeeklyResponseModel.swift in Sources */,
 				39C26DEE286C78010011F5FA /* ContentView.swift in Sources */,
@@ -319,7 +319,7 @@
 				A0EB1240286DEEA50047BAA8 /* HourlyWeatherCardView.swift in Sources */,
 				39F07FB9287A85F2007C5336 /* CityCardListView.swift in Sources */,
 				398EA0EC287AC18200EC2928 /* CsvManager.swift in Sources */,
-				3926D2DF287AE63200A5BDCF /* ArrayExtenstion.swift in Sources */,
+				3926D2DF287AE63200A5BDCF /* ArrayExtension.swift in Sources */,
 				39D6D18028719D4D00C5793E /* CurrentWeatherView.swift in Sources */,
 				39C26DEC286C78010011F5FA /* WeatherDiaryApp.swift in Sources */,
 				A0E06B972870ADA6002521D5 /* LocationManager.swift in Sources */,
