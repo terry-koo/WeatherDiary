@@ -9,18 +9,15 @@ import SwiftUI
 
 struct SearchResultView: View {
     @Binding var searchText: String
-    
-    var citys = [ City(firstName: "포항"),
-                      City(firstName: "대구"),
-                      City(firstName: "서울"),
-                      City(firstName: "부산"),
-                    ]
+    var data = CsvManager().readCSVData()
     
     var body: some View {
-        List(citys.filter({ searchText.isEmpty ? false : $0.firstName.contains(searchText) })) { item in
-            Text(item.firstName)
+        // TODO: - 검색 속도 개선 필요
+        List(data.lazy.filter({ $0.fullAddress.contains(searchText) })) { item in
+            Text(item.fullAddress)
         }
         .listStyle(PlainListStyle())
+        
     }
 }
 
