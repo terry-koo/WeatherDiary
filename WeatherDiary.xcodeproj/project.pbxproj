@@ -23,8 +23,6 @@
 		39D6D1852873519900C5793E /* 나눔손글씨 반짝반짝 별.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39D6D1842873519900C5793E /* 나눔손글씨 반짝반짝 별.ttf */; };
 		39F07FB7287A85E7007C5336 /* CityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F07FB6287A85E7007C5336 /* CityCardView.swift */; };
 		39F07FB9287A85F2007C5336 /* CityCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F07FB8287A85F2007C5336 /* CityCardListView.swift */; };
-		A0E06B9028703BB2002521D5 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E06B8F28703BB2002521D5 /* URLExtensions.swift */; };
-		A0E06B9028703BB2002521D5 /* URLExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E06B8F28703BB2002521D5 /* URLExtention.swift */; };
 		A0E06B972870ADA6002521D5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E06B962870ADA6002521D5 /* LocationManager.swift */; };
 		A0EB1240286DEEA50047BAA8 /* HourlyWeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB123F286DEEA50047BAA8 /* HourlyWeatherCardView.swift */; };
 		A0EB1244286DF1F10047BAA8 /* HourlyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EB1243286DF1F10047BAA8 /* HourlyWeatherModel.swift */; };
@@ -34,6 +32,7 @@
 		A0FCCBE72879A06E00340BED /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0FCCBE62879A06E00340BED /* key.plist */; };
 		A0FCCBE92879A0FA00340BED /* WeeklyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCCBE82879A0FA00340BED /* WeeklyWeatherModel.swift */; };
 		A0FCCBEB2879FEC700340BED /* WeeklyResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCCBEA2879FEC700340BED /* WeeklyResponseModel.swift */; };
+		A0FCCBEF287ACA9D00340BED /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCCBEE287ACA9D00340BED /* URLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +53,6 @@
 		39D6D1842873519900C5793E /* 나눔손글씨 반짝반짝 별.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 반짝반짝 별.ttf"; sourceTree = "<group>"; };
 		39F07FB6287A85E7007C5336 /* CityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCardView.swift; sourceTree = "<group>"; };
 		39F07FB8287A85F2007C5336 /* CityCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCardListView.swift; sourceTree = "<group>"; };
-		A0E06B8F28703BB2002521D5 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
-		A0E06B8F28703BB2002521D5 /* URLExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtention.swift; sourceTree = "<group>"; };
 		A0E06B9328704B92002521D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A0E06B962870ADA6002521D5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A0EB123F286DEEA50047BAA8 /* HourlyWeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCardView.swift; sourceTree = "<group>"; };
@@ -66,6 +63,7 @@
 		A0FCCBE62879A06E00340BED /* key.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
 		A0FCCBE82879A0FA00340BED /* WeeklyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherModel.swift; sourceTree = "<group>"; };
 		A0FCCBEA2879FEC700340BED /* WeeklyResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyResponseModel.swift; sourceTree = "<group>"; };
+		A0FCCBEE287ACA9D00340BED /* URLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +150,7 @@
 		A0E06B8E28703B8B002521D5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A0E06B8F28703BB2002521D5 /* URLExtensions.swift */,
-				A0E06B8F28703BB2002521D5 /* URLExtention.swift */,
+				A0FCCBEE287ACA9D00340BED /* URLExtensions.swift */,
 				3903A110287AB3C900400F31 /* KeyBoardExtenstion.swift */,
 			);
 			path = Extensions;
@@ -278,21 +275,19 @@
 				39961AD2287AA79B006BA4EA /* SearchResultView.swift in Sources */,
 				39D6D18228734BDC00C5793E /* MainView.swift in Sources */,
 				3903A111287AB3C900400F31 /* KeyBoardExtenstion.swift in Sources */,
+				A0FCCBEF287ACA9D00340BED /* URLExtensions.swift in Sources */,
 				3926E73B2877075E00400183 /* CurrentWeatherModel.swift in Sources */,
 				A0FCCBEB2879FEC700340BED /* WeeklyResponseModel.swift in Sources */,
 				39C26DEE286C78010011F5FA /* ContentView.swift in Sources */,
 				39D6D17C2871981A00C5793E /* ResponseModel.swift in Sources */,
 				A0FCCBE92879A0FA00340BED /* WeeklyWeatherModel.swift in Sources */,
-				A0E06B9028703BB2002521D5 /* URLExtensions.swift in Sources */,
 				A0FCCBE52879A01E00340BED /* WeeklyWeatherListView.swift in Sources */,
 				A0EB1246286DF2E60047BAA8 /* HourlyWeatherCardListView.swift in Sources */,
 				39D6D17E2871987200C5793E /* WeatherManager.swift in Sources */,
-				A0E06B9028703BB2002521D5 /* URLExtention.swift in Sources */,
 				A0FCCBE52879A01E00340BED /* WeeklyWeatherListView.swift in Sources */,
 				A0EB1246286DF2E60047BAA8 /* HourlyWeatherCardListView.swift in Sources */,
 				39D6D17E2871987200C5793E /* WeatherManager.swift in Sources */,
 				3903A10F287AAE6100400F31 /* CityModel.swift in Sources */,
-				A0FCCBED287A041E00340BED /* WeeklyWeatherManager.swift in Sources */,
 				39C26E0B286DB70E0011F5FA /* DateManager.swift in Sources */,
 				A0EB1240286DEEA50047BAA8 /* HourlyWeatherCardView.swift in Sources */,
 				39F07FB9287A85F2007C5336 /* CityCardListView.swift in Sources */,
