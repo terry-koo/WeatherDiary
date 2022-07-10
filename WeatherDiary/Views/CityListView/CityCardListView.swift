@@ -19,6 +19,7 @@ struct CityCardListView: View {
                     Button(action: {
                         self.isEditing = false
                         self.searchText = ""
+                        buttonHideKeyboard()
                     }) {
                         Text("취소")
                     }
@@ -41,6 +42,7 @@ struct CityCardListView: View {
                 Spacer()
             }
         }
+        .onAppear (perform : UIApplication.shared.hideKeyboard)
     } // body
     
     
@@ -66,9 +68,11 @@ struct CityCardListView: View {
     }
     
 }
+ 
 
 struct CityCardListView_Previews: PreviewProvider {
     static var previews: some View {
         CityCardListView(searchText: "포항")
     }
 }
+
