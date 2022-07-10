@@ -12,4 +12,6 @@ struct City: Identifiable {
     var firstName: String = ""
     var secondName: String = ""
     var thirdName: String = ""
+    var nx: String = ""
+    var ny: String = ""
 }
