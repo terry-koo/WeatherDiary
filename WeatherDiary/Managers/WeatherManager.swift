@@ -16,7 +16,7 @@ class WeatherManager: ObservableObject {
     var baseTime: String { date.getCategorizedHour() + "00" }
     
     // MARK: - Weekly Weather Properties
-    var weeklyWeather: [WeeklyWeather] = []
+    var weeklyWeathers: [WeeklyWeather] = []
     private var temporaryForecasts: [Forecast] = []
     private var temporaryTemperatures: [Temperature] = []
     private var weeklyBaseDate: String {
@@ -128,9 +128,9 @@ class WeatherManager: ObservableObject {
     
     // MARK: - 일 최고/최저 기온 메서드
     private func lowestHighestTemp(grid: Grid) async throws -> Void {
-            let dateManager: DateManager = DateManager()
+        let dateManager: DateManager = DateManager()
             
-        guard let url = URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(apiKey)&pageNo=1&numOfRows=290&dataType=JSON&base_date=\(dateManager.getTodayDate())&base_time=0200&nx=\(grid.nx)&ny=\(grid.ny)") else {
+        guard let url = URL.forLowestHighestTemperature(grid: grid, date: dateManager.getTodayDate()) else {
                 fatalError("Missing URL")
         }
         
@@ -203,20 +203,29 @@ class WeatherManager: ObservableObject {
     func weeklyMaxMinTemperature(from decodedData: Response) {
         var highest: String = ""
         var lowest: String = ""
-        var temperature: [Temperature] = []
+        var sky: String = ""
+        var rainProbability = ""
         
         let weeklyItem = decodedData.response.body.items.item
         for item in weeklyItem {
             switch item.category {
             case "TMX": highest = item.fcstValue
             case "TMN": lowest = item.fcstValue
+            case "SKY": sky = item.fcstValue
+            case "POP": rainProbability = item.fcstValue
+                // pop
+                // fcstdate
             default: break
             }
-            if highest != "" && lowest != "" {
-                temperature.append(Temperature(highest: Int(Double(highest) ?? 0.0), lowest: Int(Double(lowest) ?? 0)))
-                print(temperature)
+            if highest != "" && lowest != "" && sky != "" && rainProbability != "" {
+                weeklyWeathers.append(WeeklyWeather(day: item.fcstDate,
+                                                    icon: "",
+                                                    forecast: Forecast(rainProbability: Int(rainProbability) ?? 0, sky: sky),
+                                                    temperature: Temperature(highest: Int(Double(highest) ?? 0.0), lowest: Int(Double(lowest) ?? 0.0))))
                 highest = ""
                 lowest = ""
+                sky = ""
+                rainProbability = ""
             }
         }
     }
@@ -231,7 +240,7 @@ class WeatherManager: ObservableObject {
         }
         
         for index in temporaryForecasts.indices {
-            weeklyWeather.append(WeeklyWeather(day: "", icon: "", forecast: temporaryForecasts[index], temperature: temporaryTemperatures[index]))
+            weeklyWeathers.append(WeeklyWeather(day: "", icon: "", forecast: temporaryForecasts[index], temperature: temporaryTemperatures[index]))
         }
     }
 }

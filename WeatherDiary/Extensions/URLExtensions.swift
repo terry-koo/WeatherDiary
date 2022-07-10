@@ -34,4 +34,8 @@ extension URL {
     static func forWeeklyTemperature(regID: String, date: String) -> URL? {
         return URL(string: "https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=\(apiKey)&pageNo=1&numOfRows=10&dataType=JSON&regId=\(regID)&tmFc=\(date)")
     }
+    
+    static func forLowestHighestTemperature(grid: Grid, date: String) -> URL? {
+        return URL(string: "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=\(apiKey)&pageNo=1&numOfRows=1000&dataType=JSON&base_date=\(date)&base_time=0200&nx=\(grid.nx)&ny=\(grid.ny)")
+    }
 }
