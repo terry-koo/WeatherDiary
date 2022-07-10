@@ -8,8 +8,24 @@
 import Foundation
 
 class WeeklyWeatherManager {
-    func requestWeeklyWeather(regId: String, date: String) async throws -> Void {
-        guard let url = URL.forWeeklyWeather(regID: regId, date: date) else { fatalError("Missing URL") }
+    private var baseDate: String {
+        let dateManager: DateManager = DateManager()
+        let yesterdayBaseDate: String = dateManager.getYesterday() + "1800"
+        let firstBaseDate: String = dateManager.getTodayDate() + "0600"
+        let secondBaseDate: String = dateManager.getTodayDate() + "1800"
+        let currentDate: String = dateManager.getToday()
+        
+        if currentDate < firstBaseDate {
+            return yesterdayBaseDate
+        } else if currentDate > secondBaseDate {
+            return secondBaseDate
+        } else {
+            return firstBaseDate
+        }
+    }
+    
+    func requestWeeklyWeather(regId: String) async throws -> Void {
+        guard let url = URL.forWeeklyWeather(regID: regId, date: baseDate) else { fatalError("Missing URL") }
 
         let urlRequest = URLRequest(url: url)
 
@@ -21,14 +37,10 @@ class WeeklyWeatherManager {
 
         let decoedData = try JSONDecoder().decode(ResponseForWeeklyWeather.self, from: data)
         print(decoedData)
-   //     infos = self.fetchHourlyWeather(from: decoedData)
-   //     self.currentTempCondition(decodedData: decoedData)
-  //      try await self.lowestHighestTemp(grid: grid)
-  //      // FIXME: - 스레드
     }
     
-    func requestWeeklyTemperature(regId: String, date: String) async throws -> Void {
-        guard let url = URL.forWeeklyTemperature(regID: regId, date: date) else { fatalError("Missing URL") }
+    func requestWeeklyTemperature(regId: String) async throws -> Void {
+        guard let url = URL.forWeeklyTemperature(regID: regId, date: baseDate) else { fatalError("Missing URL") }
 
         let urlRequest = URLRequest(url: url)
 
@@ -40,9 +52,5 @@ class WeeklyWeatherManager {
 
         let decoedData = try JSONDecoder().decode(ResponseForWeeklyTemperature.self, from: data)
         print(decoedData)
-   //     infos = self.fetchHourlyWeather(from: decoedData)
-   //     self.currentTempCondition(decodedData: decoedData)
-  //      try await self.lowestHighestTemp(grid: grid)
-  //      // FIXME: - 스레드
     }
 }
