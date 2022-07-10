@@ -12,7 +12,7 @@ struct WeatherDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             //MainView()
-            CityCardListView()
+            CityCardListView(searchText: "")
         }
     }
 }
