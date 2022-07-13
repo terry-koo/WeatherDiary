@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct WeeklyWeatherListView: View {
+    let weeklyInfo: [WeeklyWeather]
     var body: some View {
         List {
-            ForEach(WeeklyWeather(day: "", icon: "", forecast: Forecast(rainProbability: 0, sky: ""), temperature: Temperature(highest: 0, lowest: 0)).dummys, id: \.self) { row in
-                WeeklyWeatherListRowView(weeklyWeather: WeeklyWeather(day: row.day, icon: row.icon, forecast: row.forecast, temperature: row.temperature))
+            ForEach(weeklyInfo, id: \.self) { row in
+                WeeklyWeatherListRowView(weeklyWeather: WeeklyWeather(day: row.day, forecast: row.forecast, temperature: row.temperature))
             }
         }.listStyle(.plain)
     }
@@ -19,6 +20,6 @@ struct WeeklyWeatherListView: View {
 
 struct WeeklyWeatherListView_Previews: PreviewProvider {
     static var previews: some View {
-        WeeklyWeatherListView()
+        WeeklyWeatherListView(weeklyInfo: WeeklyWeather(day: "", forecast: Forecast(rainProbability: 0, sky: ""), temperature: Temperature(highest: 0, lowest: 0)).dummys)
     }
 }
