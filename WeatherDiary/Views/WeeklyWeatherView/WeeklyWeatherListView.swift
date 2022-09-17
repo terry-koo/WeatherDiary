@@ -10,11 +10,11 @@ import SwiftUI
 struct WeeklyWeatherListView: View {
     let weeklyInfo: [WeeklyWeather]
     var body: some View {
-        List {
+        VStack {
             ForEach(weeklyInfo, id: \.self) { row in
                 WeeklyWeatherListRowView(weeklyWeather: WeeklyWeather(day: row.day, forecast: row.forecast, temperature: row.temperature))
             }
-        }.listStyle(.plain)
+        }
     }
 }
 

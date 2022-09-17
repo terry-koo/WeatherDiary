@@ -19,7 +19,11 @@ struct WeeklyWeatherListRowView: View {
                 Text("최고 \(weeklyWeather.temperature.highest)°")
             }
             .font(.custom("NanumBanJjagBanJjagByeor", size: 25))
-            .padding(.horizontal)
+            .padding(.horizontal,20)
+            .padding(.bottom, 3)
+            
+            Image("weeklyLine")
+                .padding(.top, 0)
         }
     }
 }

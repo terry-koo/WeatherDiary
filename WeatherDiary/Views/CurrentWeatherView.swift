@@ -19,6 +19,9 @@ struct CurrentWeatherView: View {
                 boldText("포항")
                 Spacer()
                 boldText("\(currentWeather.condition!)")
+                Image("sun")
+                    .resizable()
+                    .scaledToFit()
                 Spacer(minLength: 75)
             } // HStack
             HStack(alignment: .center) {

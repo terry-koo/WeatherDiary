@@ -26,6 +26,7 @@ struct MainView: View {
                     .task {
                         do {
                             try await weatherManager.requestWeather(grid: Grid(nx: 102, ny: 94))
+                            // FIXME: API 호출 에러 수정 필요
                             try await weatherManager.fetchWeeklyWeather(weatherRegId: "11B00000", temperatureRegId: "11B10101")
                         } catch {
                             print("에러")
@@ -33,7 +34,12 @@ struct MainView: View {
                     }
             }
             Spacer()
-        }
+        }.background(
+            Image("background")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 }
 
