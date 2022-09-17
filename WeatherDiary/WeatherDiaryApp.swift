@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WeatherDiaryApp: App {
+    @StateObject var locationManager: LocationManager = LocationManager()
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(locationManager)
             //CityCardListView(searchText: "")
         }
     }

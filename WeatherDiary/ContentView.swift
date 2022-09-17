@@ -14,7 +14,7 @@ struct ContentView: View {
         Image("sun")
             .resizable()
             .frame(width: 80, height: 80)
-        Text("엄마한테 날씨 물어보는 중...")
+        Text("엄마한테 포항 날씨 물어보는 중...")
             .font(.custom("NanumBanJjagBanJjagByeor", size: 25))
             
         Spacer()

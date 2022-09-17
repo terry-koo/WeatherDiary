@@ -50,6 +50,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationToGrid(lat: Double, lon: Double) -> Grid {
+        print(lat)
         let EARTH_RADIUS = 6371.00877 // 지구 반경(km)
         let GRID = 5.0 // 격자 간격(km)
         let SLAT1 = 30.0 // 투영 위도1(degree)
@@ -83,6 +84,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         if theta < -Double.pi { theta += 2.0 * Double.pi }
         
         theta *= sn
+        print(floor(ra * sin(theta) + XO + 0.5))
         grid.nx = Int(floor(ra * sin(theta) + XO + 0.5))
         grid.ny = Int(floor(ro - ra * cos(theta) + YO + 0.5))
         return grid
