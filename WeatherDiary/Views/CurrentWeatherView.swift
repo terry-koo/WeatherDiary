@@ -20,7 +20,7 @@ struct CurrentWeatherView: View {
                 boldText("포항")
                 Spacer()
                 boldText("\(currentWeather.condition!)")
-                Image("sun")
+                Image(currentWeather.currentImage)
                     .resizable()
                     .scaledToFit()
                 Spacer(minLength: 75)
