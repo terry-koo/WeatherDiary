@@ -52,6 +52,7 @@ class WeatherManager: ObservableObject {
     func requestWeather(grid: Grid) async throws -> Void {
         self.currentWeather = CurrentWeather()
         guard let url = URL.forHourlyWeather(date: today, baseTime: baseTime, grid: grid) else { fatalError("Missing URL") }
+        print(url)
 
         let urlRequest = URLRequest(url: url)
 

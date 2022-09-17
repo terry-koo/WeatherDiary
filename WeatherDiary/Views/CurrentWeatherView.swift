@@ -10,6 +10,7 @@ import SwiftUI
 struct CurrentWeatherView: View {
     var currentWeather: CurrentWeather
     var dateManager: DateManager = DateManager()
+    
     var body: some View {
         VStack {
             Text("\(dateManager.getTodayDateTime())")
