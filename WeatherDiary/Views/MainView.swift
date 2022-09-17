@@ -7,17 +7,17 @@ struct MainView: View {
         
         VStack {
             if let currentWeather = weatherManager.currentWeather {
-                HStack {
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "text.justify")
-                            .foregroundColor(.black)
-                            .font(.title)
-                            .padding()
-                    }
-                    Spacer()
-                }
+//                HStack {
+//                    Button(action: {
+//
+//                    }) {
+//                        Image(systemName: "text.justify")
+//                            .foregroundColor(.black)
+//                            .font(.title)
+//                            .padding()
+//                    }
+//                    Spacer()
+//                }
                 CurrentWeatherView(currentWeather: currentWeather)
                 HourlyWeatherCardListView(hourlyWeathers: weatherManager.infos)
                 WeeklyWeatherListView(weeklyInfo: weatherManager.weeklyWeathers)
@@ -40,6 +40,7 @@ struct MainView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
         )
+        
     }
 }
 

@@ -12,20 +12,19 @@ struct HourlyWeatherCardView: View {
     let hourlyWeather: HourlyWeather
     
     var body: some View {
-        VStack {
-            Text(hourlyWeather.displayTime)
-                .padding(.top, 10)
-            Image(systemName: hourlyWeather.icon)
-                .resizable()
-                .scaledToFit()
-            Text(hourlyWeather.temperature)
-                .padding(.bottom, 10)
-        }
+        Image("card")
+            .overlay {
+                VStack {
+                    Text("  \(hourlyWeather.displayTime)")
+                        .padding(.top, 10)
+                    Image(systemName: hourlyWeather.icon)
+                        .resizable()
+                        .scaledToFit()
+                    Text(hourlyWeather.temperature)
+                        .padding(.bottom, 10)
+                }
+            }
         .frame(width: 100, height: 120)
-        .overlay {
-            Image("card")
-                .resizable()
-        }
     }
 }
 
