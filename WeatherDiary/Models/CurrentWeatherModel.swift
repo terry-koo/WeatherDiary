@@ -35,6 +35,19 @@ struct CurrentWeather {
             }
         }
     }
+    var currentImage: String {
+        switch condition {
+        case "비": return "rain"
+        case "비/눈": return "snowRain"
+        case "눈": return "snow"
+        case "소나기": return "rain"
+        case "맑음": return "sun"
+        case "구름많음": return "cloudy"
+        case "흐림": return "cloudy"
+        case "없음": return "rain"
+        default: return "sun"
+        }
+    }
     var currentTemp: String?
     var highestTemp : String?
     var lowestTemp: String?

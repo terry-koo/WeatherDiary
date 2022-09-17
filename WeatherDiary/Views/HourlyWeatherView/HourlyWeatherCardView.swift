@@ -16,11 +16,13 @@ struct HourlyWeatherCardView: View {
             .overlay {
                 VStack {
                     Text("  \(hourlyWeather.displayTime)")
+                    //    .font(.custom("NanumBanJjagBanJjagByeor", size: 20))
                         .padding(.top, 10)
                     Image(systemName: hourlyWeather.icon)
                         .resizable()
                         .scaledToFit()
                     Text(hourlyWeather.temperature)
+                  //      .font(.custom("NanumBanJjagBanJjagByeor", size: 20))
                         .padding(.bottom, 10)
                 }
             }
