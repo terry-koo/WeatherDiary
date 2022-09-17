@@ -11,8 +11,8 @@ import SwiftUI
 struct WeatherDiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            //MainView()
-            CityCardListView(searchText: "")
+            MainView()
+            //CityCardListView(searchText: "")
         }
     }
 }

@@ -218,8 +218,7 @@ class WeatherManager: ObservableObject {
             default: break
             }
             if highest != "" && lowest != "" && sky != "" && rainProbability != "" {
-                weeklyWeathers.append(WeeklyWeather(day: item.fcstDate,
-                                                    icon: "",
+                weeklyWeathers.append(WeeklyWeather(day: date.getWeeklyDay(offset: weeklyWeathers.count),
                                                     forecast: Forecast(rainProbability: Int(rainProbability) ?? 0, sky: sky),
                                                     temperature: Temperature(highest: Int(Double(highest) ?? 0.0), lowest: Int(Double(lowest) ?? 0.0))))
                 highest = ""
@@ -240,7 +239,7 @@ class WeatherManager: ObservableObject {
         }
         
         for index in temporaryForecasts.indices {
-            weeklyWeathers.append(WeeklyWeather(day: "", icon: "", forecast: temporaryForecasts[index], temperature: temporaryTemperatures[index]))
+            weeklyWeathers.append(WeeklyWeather(day: date.getWeeklyDay(offset: weeklyWeathers.count), forecast: temporaryForecasts[index], temperature: temporaryTemperatures[index]))
         }
     }
 }

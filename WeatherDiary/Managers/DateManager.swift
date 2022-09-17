@@ -49,6 +49,11 @@ class DateManager {
         }
     }
     
+    func getWeeklyDay(offset: Int) -> String {
+        formatter.dateFormat = "EEEEE"
+        let day = formatter.string(from: Date().addingTimeInterval(TimeInterval(3600 * 24 * offset)))
+        return day
+    }
     
     // FIXME: - case "01", "02" 수정 필요
     func getCategorizedHour() -> String {
