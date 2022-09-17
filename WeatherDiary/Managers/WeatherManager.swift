@@ -228,18 +228,4 @@ class WeatherManager: ObservableObject {
             }
         }
     }
-    
-    func fetchWeeklyWeather(weatherRegId: String, temperatureRegId: String) async throws -> Void {
-        
-        do {
-            try await requestWeeklyWeather(regId: weatherRegId)
-            try await requestWeeklyTemperature(regId: temperatureRegId)
-        } catch {
-            print("Weekly Weather Fetch Error")
-        }
-        
-        for index in temporaryForecasts.indices {
-            weeklyWeathers.append(WeeklyWeather(day: date.getWeeklyDay(offset: weeklyWeathers.count), forecast: temporaryForecasts[index], temperature: temporaryTemperatures[index]))
-        }
-    }
 }
