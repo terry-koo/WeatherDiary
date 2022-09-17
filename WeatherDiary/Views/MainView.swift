@@ -26,16 +26,6 @@ struct MainView: View {
                             try await weatherManager.requestWeather(grid: Grid(nx: 102, ny: 94))
                         } catch {
                             print("에러1")
-                            do {
-                                try await weatherManager.requestWeather(grid: Grid(nx: 102, ny: 94))
-                            } catch {
-                                print("에러2")
-                                do {
-                                    try await weatherManager.requestWeather(grid: Grid(nx: 102, ny: 94))
-                                } catch {
-                                    print("에러3")
-                                }
-                            }
                         }
                     }
             }
