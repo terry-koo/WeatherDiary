@@ -10,7 +10,7 @@ import SwiftUI
 struct WeatherInfoView: View {
     var body: some View {
         CurrentWeatherView()
-        Text("ho").font(.title)
+        HourlyWeatherListView()
     }
 }
 
