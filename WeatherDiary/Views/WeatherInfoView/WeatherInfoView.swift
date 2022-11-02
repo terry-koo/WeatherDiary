@@ -9,8 +9,11 @@ import SwiftUI
 
 struct WeatherInfoView: View {
     var body: some View {
-        CurrentWeatherView()
-        HourlyWeatherListView()
+        ScrollView {
+            CurrentWeatherView()
+            HourlyWeatherListView()
+            WeeklyWeatherListView()
+        }
     }
 }
 

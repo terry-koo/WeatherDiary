@@ -20,6 +20,7 @@ struct CurrentWeatherView: View {
                     .scaledToFit()
                     .frame(height : 60)
             }
+            .padding(.vertical, 50)
             HStack {
                 Text("16도")
                     .font(Font.weatherLargeTitle)
@@ -34,7 +35,9 @@ struct CurrentWeatherView: View {
                 }
                 .font(Font.weatherTitle)
             }
-        }.frame(maxWidth: .infinity)
+        }
+        .padding(.top, 40)
+        .frame(maxWidth: .infinity)
     }
 }
 
