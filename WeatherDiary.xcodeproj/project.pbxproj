@@ -18,6 +18,7 @@
 		A0F8228B290D0B2900AF4448 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8228A290D0B2900AF4448 /* CurrentWeatherView.swift */; };
 		A0F8228D290D0B4100AF4448 /* HourlyWeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8228C290D0B4100AF4448 /* HourlyWeatherListView.swift */; };
 		A0F8228F290D0B5500AF4448 /* WeeklyWeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8228E290D0B5500AF4448 /* WeeklyWeatherListView.swift */; };
+		A0F822AF29129D9E00AF4448 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F822AE29129D9E00AF4448 /* Font+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A0F8228A290D0B2900AF4448 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		A0F8228C290D0B4100AF4448 /* HourlyWeatherListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherListView.swift; sourceTree = "<group>"; };
 		A0F8228E290D0B5500AF4448 /* WeeklyWeatherListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherListView.swift; sourceTree = "<group>"; };
+		A0F822AE29129D9E00AF4448 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		39C26DEA286C78010011F5FA /* WeatherDiary */ = {
 			isa = PBXGroup;
 			children = (
+				A0F822AD29129D7900AF4448 /* Extension */,
 				A0E06B9328704B92002521D5 /* Info.plist */,
 				39D6D1832873516F00C5793E /* Font */,
 				A0EB123D286DEE7D0047BAA8 /* Views */,
@@ -111,6 +114,14 @@
 				39E8CD5128D591040087D0EF /* LicenseView.swift */,
 			);
 			path = WeatherInfoView;
+			sourceTree = "<group>";
+		};
+		A0F822AD29129D7900AF4448 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A0F822AE29129D9E00AF4448 /* Font+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 				39E8CD5228D591040087D0EF /* LicenseView.swift in Sources */,
 				A0F82286290D0AE700AF4448 /* LoadingView.swift in Sources */,
 				39C26DEC286C78010011F5FA /* WeatherDiaryApp.swift in Sources */,
+				A0F822AF29129D9E00AF4448 /* Font+Extension.swift in Sources */,
 				A0F8228F290D0B5500AF4448 /* WeeklyWeatherListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
