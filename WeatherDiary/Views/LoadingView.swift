@@ -9,7 +9,16 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            Image("sun")
+                .resizable()
+                .frame(width: 100, height: 100)
+            Text("엄마한테 날씨 물어보는 중...")
+                .font(Font.weatherTitle)
+        
+            Spacer()
+        }
     }
 }
 

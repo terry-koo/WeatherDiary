@@ -110,6 +110,7 @@
 				A0F82289290D0B0200AF4448 /* WeatherInfoView */,
 				A0F82285290D0AE700AF4448 /* LoadingView.swift */,
 				A03EC6C32919375100AA3EEC /* MainView.swift */,
+				39E8CD5128D591040087D0EF /* LicenseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,7 +122,6 @@
 				A0F8228A290D0B2900AF4448 /* CurrentWeatherView.swift */,
 				A0F8228C290D0B4100AF4448 /* HourlyWeatherListView.swift */,
 				A0F8228E290D0B5500AF4448 /* WeeklyWeatherListView.swift */,
-				39E8CD5128D591040087D0EF /* LicenseView.swift */,
 			);
 			path = WeatherInfoView;
 			sourceTree = "<group>";
