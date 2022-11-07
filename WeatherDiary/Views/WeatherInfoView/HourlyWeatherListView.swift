@@ -9,7 +9,9 @@ import SwiftUI
 import WeatherKit
 
 struct HourlyWeatherListView: View {
+    
     var weather: Weather
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {

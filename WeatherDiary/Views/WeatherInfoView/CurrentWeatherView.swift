@@ -9,7 +9,9 @@ import SwiftUI
 import WeatherKit
 
 struct CurrentWeatherView: View {
+    
     var weather: Weather
+    
     var body: some View {
         VStack {
             // TODO: 날짜 텍스트 수정해야함

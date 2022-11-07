@@ -20,7 +20,7 @@ struct WeatherInfoView: View {
                // currentWeatherView
                 CurrentWeatherView(weather: weather)
                 HourlyWeatherListView(weather: weather)
-                WeeklyWeatherListView()
+                WeeklyWeatherListView(weather: weather)
             }
             
             // currentWeather: CurrentWeather = weather.currentWeather

@@ -6,31 +6,36 @@
 //
 
 import SwiftUI
+import WeatherKit
 
 struct WeeklyWeatherListView: View {
+    
+    var weather: Weather
+    
     var body: some View {
         VStack {
-            WeeklyWeatherCell
-            WeeklyWeatherCell
-            WeeklyWeatherCell
-            WeeklyWeatherCell
-            WeeklyWeatherCell
-            WeeklyWeatherCell
-            WeeklyWeatherCell
+            ForEach(weather.dailyForecast.forecast[0..<10], id: \.date) { dayWeather in
+                WeeklyWeatherCellView(dayWeather: dayWeather)
+            //    HourlyWeatherCell
+            }
         }
         .padding(.top, 15)
     }
 }
 
-extension WeeklyWeatherListView {
-    var WeeklyWeatherCell: some View {
+struct WeeklyWeatherCellView: View {
+    
+    var dayWeather: DayWeather
+    
+    var body: some View {
         VStack {
             HStack {
-                Text("요일요일")
+                Text("\(dayWeather.date)")
+                //Text("요일요일")
                     .font(Font.weatherBody)
-                Image(systemName: "leaf")
+                Image(systemName: dayWeather.symbolName)
                 Spacer()
-                Text("최저 33도 최고 100도")
+                Text("최저 \(Int(dayWeather.lowTemperature.value))°C 최고 \(Int(dayWeather.highTemperature.value))°C")
                     .font(Font.weatherBody)
             }
             .padding(.horizontal, 30)
@@ -38,9 +43,9 @@ extension WeeklyWeatherListView {
         }
     }
 }
-
+/*
 struct WeeklyWeatherListView_Previews: PreviewProvider {
     static var previews: some View {
         WeeklyWeatherListView()
     }
-}
+}*/
