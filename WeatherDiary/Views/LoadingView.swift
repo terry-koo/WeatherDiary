@@ -11,6 +11,7 @@ struct LoadingView: View {
     var body: some View {
         VStack {
             Spacer()
+            
             Image("sun")
                 .resizable()
                 .frame(width: 100, height: 100)

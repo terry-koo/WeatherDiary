@@ -10,6 +10,7 @@ import CoreLocation
 
 class LocationManager: NSObject, ObservableObject {
     @Published var currentLocation: CLLocation?
+    @Published var locality: String?
     private let locationManager = CLLocationManager()
     
     override init() {
@@ -33,9 +34,14 @@ extension LocationManager: CLLocationManagerDelegate {
 }
 
 extension LocationManager {
-    private func fetchCurrentLocationName() -> String {
+    func fetchLocality(location: CLLocation) {
         
         let geocoder = CLGeocoder()
-        return ""
+        
+        geocoder.reverseGeocodeLocation(location, preferredLocale: Locale(identifier: "Ko-kr")) { placemarks, error in
+            guard error == nil, let locality = placemarks?.last?.locality else { return }
+            self.locality = locality
+            
+        }
     }
 }

@@ -20,6 +20,7 @@ struct HourlyWeatherListView: View {
                     HourlyWeatherCellView(hourlyWeather: hourlyWeather)
                 }
             }
+            .padding(.leading, 20)
         }
     }
 }

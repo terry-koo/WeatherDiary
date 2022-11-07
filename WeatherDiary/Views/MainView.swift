@@ -18,6 +18,7 @@ struct MainView: View {
         VStack {
             if let weather {
                 WeatherInfoView(weather: weather)
+                    .environmentObject(locationManager)
             } else {
                 LoadingView()
             }
@@ -26,6 +27,7 @@ struct MainView: View {
             do {
                 if let location = locationManager.currentLocation {
                     self.weather = try await weatherService.weather(for: location)
+                    locationManager.fetchLocality(location: location)
                 }
             } catch {
                 print(error)

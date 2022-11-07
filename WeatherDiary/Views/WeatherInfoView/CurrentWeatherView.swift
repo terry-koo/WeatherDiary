@@ -11,6 +11,7 @@ import WeatherKit
 struct CurrentWeatherView: View {
     
     var weather: Weather
+    var locality: String?
     
     var body: some View {
         VStack {
@@ -20,7 +21,7 @@ struct CurrentWeatherView: View {
                 .font(Font.weatherTitle)
             HStack {
                 //TODO: 지역 날씨 수정해야함
-                Text("(지역) (날씨)")
+                Text("\(locality ?? "") \(weather.currentWeather.condition)")
                     .font(Font.weatherLargeTitle)
                 Image("sun")
                     .resizable()
