@@ -31,3 +31,11 @@ extension LocationManager: CLLocationManagerDelegate {
         }
     }
 }
+
+extension LocationManager {
+    private func fetchCurrentLocationName() -> String {
+        
+        let geocoder = CLGeocoder()
+        return ""
+    }
+}

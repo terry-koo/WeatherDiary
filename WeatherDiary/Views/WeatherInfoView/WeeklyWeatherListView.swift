@@ -30,7 +30,7 @@ struct WeeklyWeatherCellView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(dayWeather.date)")
+                Text("\(dayWeather.date.formatted("EE요일"))")
                 //Text("요일요일")
                     .font(Font.weatherBody)
                 Image(systemName: dayWeather.symbolName)

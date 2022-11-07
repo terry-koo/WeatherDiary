@@ -15,7 +15,7 @@ struct CurrentWeatherView: View {
     var body: some View {
         VStack {
             // TODO: 날짜 텍스트 수정해야함
-            Text("\(weather.currentWeather.date)")
+            Text("\(weather.currentWeather.date.formatted("yyyy년 MM월 dd일 EEE요일"))")
             //Text("2022년 10월 28일 목요일")
                 .font(Font.weatherTitle)
             HStack {

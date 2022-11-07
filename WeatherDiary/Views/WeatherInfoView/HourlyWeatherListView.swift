@@ -32,15 +32,15 @@ struct HourlyWeatherCellView: View {
         Image("card")
             .overlay {
                 VStack {
-                    Text("\(hourlyWeather.date)")
+                    Text("\(hourlyWeather.date.formatted("a h시"))")
                         .font(Font.weatherBody)
-                        .padding(.top, 5)
+                        .padding(.top, 3)
                     Image(systemName: hourlyWeather.symbolName)
                         .resizable()
                         .scaledToFit()
                     Text("\(Int(hourlyWeather.temperature.value))°C")
                         .font(Font.weatherBody)
-                        .padding(.bottom, 5)
+                        .padding(.bottom, 3)
                 }
             }
     }
