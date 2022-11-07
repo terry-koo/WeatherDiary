@@ -19,7 +19,7 @@ struct WeatherInfoView: View {
             if let weather {
                // currentWeatherView
                 CurrentWeatherView(weather: weather)
-                HourlyWeatherListView()
+                HourlyWeatherListView(weather: weather)
                 WeeklyWeatherListView()
             }
             
@@ -35,6 +35,7 @@ struct WeatherInfoView: View {
                 
                 if let location = locationManager.currentLocation {
                     self.weather = try await weatherService.weather(for: location)
+                    print(weather?.hourlyForecast.forecast.count)
                 }
             } catch {
                 print(error)

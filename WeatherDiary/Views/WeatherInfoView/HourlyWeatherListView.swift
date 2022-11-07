@@ -6,45 +6,47 @@
 //
 
 import SwiftUI
+import WeatherKit
 
 struct HourlyWeatherListView: View {
+    var weather: Weather
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                HourlyWeatherCell
-                HourlyWeatherCell
-                HourlyWeatherCell
-                HourlyWeatherCell
-                HourlyWeatherCell
-                HourlyWeatherCell
-                HourlyWeatherCell
+                ForEach(weather.hourlyForecast.forecast[0..<24], id: \.date) { hourlyWeather in
+                //    HourlyWeatherCell
+                    HourlyWeatherCellView(hourlyWeather: hourlyWeather)
+                }
             }
         }
     }
 }
 
-extension HourlyWeatherListView {
-    var HourlyWeatherCell: some View {
+struct HourlyWeatherCellView: View {
+    
+    let hourlyWeather: HourWeather
+    
+    var body: some View {
         Image("card")
             .overlay {
                 VStack {
-                    Text("현재 시간")
+                    Text("\(hourlyWeather.date)")
                         .font(Font.weatherBody)
                         .padding(.top, 5)
-                    Image(systemName: "leaf")
+                    Image(systemName: hourlyWeather.symbolName)
                         .resizable()
                         .scaledToFit()
-                    Text("기온")
+                    Text("\(Int(hourlyWeather.temperature.value))°C")
                         .font(Font.weatherBody)
                         .padding(.bottom, 5)
                 }
             }
-        
     }
 }
-
+/*
 struct HourlyWeatherListView_Previews: PreviewProvider {
     static var previews: some View {
         HourlyWeatherListView()
     }
 }
+*/
