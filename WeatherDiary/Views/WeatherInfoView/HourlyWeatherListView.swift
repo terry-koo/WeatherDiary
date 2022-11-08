@@ -11,12 +11,14 @@ import WeatherKit
 struct HourlyWeatherListView: View {
     
     var weather: Weather
-    
     var body: some View {
+        let hourlyWeathers: [HourWeather] = weather.hourlyForecast.forecast.filter {
+            $0.date >= Date.now.addingTimeInterval(-3600)
+        }
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(weather.hourlyForecast.forecast[0..<24], id: \.date) { hourlyWeather in
-                //    HourlyWeatherCell
+                HourlyWeatherCellView(isFirst: true, hourlyWeather: hourlyWeathers.first!)
+                ForEach(hourlyWeathers[1..<24], id: \.date) { hourlyWeather in
                     HourlyWeatherCellView(hourlyWeather: hourlyWeather)
                 }
             }
@@ -27,13 +29,14 @@ struct HourlyWeatherListView: View {
 
 struct HourlyWeatherCellView: View {
     
+    var isFirst: Bool = false
     let hourlyWeather: HourWeather
     
     var body: some View {
         Image("card")
             .overlay {
                 VStack {
-                    Text("\(hourlyWeather.date.formatted("a h시"))")
+                    Text("\(isFirst ? "지금" : hourlyWeather.date.timeOnlyHour)")
                         .font(Font.weatherBody)
                         .padding(.top, 3)
                     Image(systemName: hourlyWeather.symbolName)
@@ -46,10 +49,4 @@ struct HourlyWeatherCellView: View {
             }
     }
 }
-/*
-struct HourlyWeatherListView_Previews: PreviewProvider {
-    static var previews: some View {
-        HourlyWeatherListView()
-    }
-}
-*/
+
