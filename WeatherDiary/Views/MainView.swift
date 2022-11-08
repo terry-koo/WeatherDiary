@@ -23,6 +23,12 @@ struct MainView: View {
                 LoadingView()
             }
         }
+        .background {
+            Image("background")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+        }
         .task(id: locationManager.currentLocation) {
             do {
                 if let location = locationManager.currentLocation {
