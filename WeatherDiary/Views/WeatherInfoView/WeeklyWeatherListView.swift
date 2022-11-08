@@ -14,9 +14,9 @@ struct WeeklyWeatherListView: View {
     
     var body: some View {
         VStack {
-            ForEach(weather.dailyForecast.forecast[0..<10], id: \.date) { dayWeather in
+            WeeklyWeatherCellView(dayWeather: weather.dailyForecast.forecast.first!, isFirst: true)
+            ForEach(weather.dailyForecast.forecast[1..<10], id: \.date) { dayWeather in
                 WeeklyWeatherCellView(dayWeather: dayWeather)
-            //    HourlyWeatherCell
             }
         }
         .padding(.top, 15)
@@ -26,12 +26,12 @@ struct WeeklyWeatherListView: View {
 struct WeeklyWeatherCellView: View {
     
     var dayWeather: DayWeather
+    var isFirst: Bool = false
     
     var body: some View {
         VStack {
             HStack {
-                Text("\(dayWeather.date.formatted("EE요일"))")
-                //Text("요일요일")
+                Text("\(isFirst ? "오늘  " : dayWeather.date.onlyDay)")
                     .font(Font.weatherBody)
                 Image(systemName: dayWeather.symbolName)
                 Spacer()
@@ -43,9 +43,4 @@ struct WeeklyWeatherCellView: View {
         }
     }
 }
-/*
-struct WeeklyWeatherListView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeeklyWeatherListView()
-    }
-}*/
+
