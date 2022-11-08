@@ -10,13 +10,11 @@ import WeatherKit
 
 struct WeatherInfoView: View {
     
-    @EnvironmentObject var locationManager: LocationManager
-    
     var weather: Weather
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            CurrentWeatherView(weather: weather, locality: locationManager.locality)
+            CurrentWeatherView(weather: weather)
             HourlyWeatherListView(weather: weather)
             WeeklyWeatherListView(weather: weather)
         }
