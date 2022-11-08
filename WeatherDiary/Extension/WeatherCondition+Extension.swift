@@ -66,6 +66,37 @@ extension WeatherCondition {
      case tropicalStorm             //     Tropical storm.
      */
     
-    var 
+    var koreanValue: String {
+        switch self {
+        case .blowingDust: return "먼지바람"
+        case .clear: return "맑음"
+        case .cloudy: return "구름"
+        case .foggy: return "흐림"
+        case .haze: return "안개"
+        case .mostlyClear: return "거의맑음"
+        case .mostlyCloudy: return "구름많음"
+        case .partlyCloudy: return "구름보통"
+        case .smoky: return "껌껌"
+        default: return "기타"
+        }
+    }
+    
+    var imageName: String {
+        switch self {
+        case .blowingDust: return "windy"
+        case .clear: return "sun"
+        case .cloudy: return "windy"
+        case .foggy: return "windy"
+        case .haze: return "windy"
+        case .mostlyClear: return "sun"
+        case .mostlyCloudy: return "windy"
+        case .partlyCloudy: return "sunnyCloudy"
+        case .smoky: return "windy"
+        case .breezy, .windy: return "windy"
+        case .rain, .heavyRain, .freezingRain: return "rain"
+        case .snow, .heavySnow, .blowingSnow: return "snow"
+        default: return "windy"
+        }
+    }
 }
 

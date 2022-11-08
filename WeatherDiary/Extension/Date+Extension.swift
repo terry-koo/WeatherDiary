@@ -8,18 +8,36 @@
 import SwiftUI
 
 extension Date {
-    /**
-         # formatted
-         - Parameters:
-            - format: 변형할 DateFormat
-         - Note: DateFormat으로 변형한 String 반환
-        */
-    public func formatted(_ format: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        formatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
-        formatter.locale = Locale(identifier: "ko_KR")
-        
-        return formatter.string(from: self)
+    // MARK: - 요일만 표시
+    
+    public var onlyDay: String {
+        return toString("EEE요일")
+    }
+      
+      // MARK: - 요일 포함 날짜 표시
+    public var basicWithDay: String {
+        return toString("yyyy년 M월 d일 EEE요일")
+    }
+      
+      // MARK: - 시간 표시
+    public var timeOnlyHour: String {
+        return toString("a h시")
+    }
+      
+      // MARK: - Date -> String
+    public func toString(_ dateFormat: String) -> String {
+        return DateFormatter
+            .convertToKoKR(dateFormat: dateFormat)
+            .string(from: self)
+    }
+}
+
+extension DateFormatter {
+    public static func convertToKoKR(dateFormat: String) -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+      //  dateFormatter.timeZone = TimeZone(abbreviation: "KST")
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter
     }
 }

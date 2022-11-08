@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Font {
-    static var weatherLargeTitle = Font.custom("Nanum BanJjagBanJjagByeor", size: 50)
+    static var weatherLargeTitle = Font.custom("Nanum BanJjagBanJjagByeor", size: 45)
     static var weatherTitle = Font.custom("Nanum BanJjagBanJjagByeor", size: 30)
     static var weatherBody = Font.custom("Nanum BanJjagBanJjagByeor", size: 22)
 }
