@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  WeatherDiary
+
+  Created by KiWoong Hong on 2022/11/10.
+  
+*/
+
+"CFBundleDisplayName" = "날씨장"

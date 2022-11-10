@@ -16,6 +16,7 @@
 		A03EC6C229192CC200AA3EEC /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03EC6C129192CC200AA3EEC /* Date+Extension.swift */; };
 		A03EC6C42919375100AA3EEC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03EC6C32919375100AA3EEC /* MainView.swift */; };
 		A03EC6C62919470A00AA3EEC /* WeatherCondition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03EC6C52919470A00AA3EEC /* WeatherCondition+Extension.swift */; };
+		A09CBA6B291CA61100D31F5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A09CBA6D291CA61100D31F5F /* InfoPlist.strings */; };
 		A0F82286290D0AE700AF4448 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F82285290D0AE700AF4448 /* LoadingView.swift */; };
 		A0F82288290D0AFC00AF4448 /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F82287290D0AFC00AF4448 /* WeatherInfoView.swift */; };
 		A0F8228B290D0B2900AF4448 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8228A290D0B2900AF4448 /* CurrentWeatherView.swift */; };
@@ -26,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39C26DE8286C78010011F5FA /* 날씨장.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "날씨장.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39C26DE8286C78010011F5FA /* WeatherDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C26DEB286C78010011F5FA /* WeatherDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDiaryApp.swift; sourceTree = "<group>"; };
 		39C26DEF286C78030011F5FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39C26DF2286C78030011F5FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -36,6 +37,8 @@
 		A03EC6C129192CC200AA3EEC /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A03EC6C32919375100AA3EEC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A03EC6C52919470A00AA3EEC /* WeatherCondition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherCondition+Extension.swift"; sourceTree = "<group>"; };
+		A09CBA6C291CA61100D31F5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A09CBA6E291CA74E00D31F5F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0E06B9328704B92002521D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A0F82285290D0AE700AF4448 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A0F82287290D0AFC00AF4448 /* WeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoView.swift; sourceTree = "<group>"; };
@@ -69,7 +72,7 @@
 		39C26DE9286C78010011F5FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39C26DE8286C78010011F5FA /* 날씨장.app */,
+				39C26DE8286C78010011F5FA /* WeatherDiary.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +89,7 @@
 				39C26DEB286C78010011F5FA /* WeatherDiaryApp.swift */,
 				39C26DEF286C78030011F5FA /* Assets.xcassets */,
 				39C26DF1286C78030011F5FA /* Preview Content */,
+				A09CBA6D291CA61100D31F5F /* InfoPlist.strings */,
 			);
 			path = WeatherDiary;
 			sourceTree = "<group>";
@@ -149,9 +153,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39C26DE7286C78010011F5FA /* 날씨장 */ = {
+		39C26DE7286C78010011F5FA /* WeatherDiary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39C26DF6286C78030011F5FA /* Build configuration list for PBXNativeTarget "날씨장" */;
+			buildConfigurationList = 39C26DF6286C78030011F5FA /* Build configuration list for PBXNativeTarget "WeatherDiary" */;
 			buildPhases = (
 				39C26DE4286C78010011F5FA /* Sources */,
 				39C26DE5286C78010011F5FA /* Frameworks */,
@@ -161,12 +165,12 @@
 			);
 			dependencies = (
 			);
-			name = "날씨장";
+			name = WeatherDiary;
 			packageProductDependencies = (
 				3903A113287ABEE800400F31 /* CSV */,
 			);
 			productName = WeatherDiary;
-			productReference = 39C26DE8286C78010011F5FA /* 날씨장.app */;
+			productReference = 39C26DE8286C78010011F5FA /* WeatherDiary.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -191,6 +195,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 39C26DDF286C78010011F5FA;
 			packageReferences = (
@@ -200,7 +205,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39C26DE7286C78010011F5FA /* 날씨장 */,
+				39C26DE7286C78010011F5FA /* WeatherDiary */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39C26DF3286C78030011F5FA /* Preview Assets.xcassets in Resources */,
+				A09CBA6B291CA61100D31F5F /* InfoPlist.strings in Resources */,
 				39D6D1852873519900C5793E /* 나눔손글씨 반짝반짝 별.ttf in Resources */,
 				39C26DF0286C78030011F5FA /* Assets.xcassets in Resources */,
 			);
@@ -240,11 +246,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		A09CBA6D291CA61100D31F5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A09CBA6C291CA61100D31F5F /* en */,
+				A09CBA6E291CA74E00D31F5F /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		39C26DF4286C78030011F5FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -305,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -361,13 +381,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WeatherDiary/WeatherDiary.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PCQ932FR3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherDiary/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -379,9 +401,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.renewal.weatherDiary;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tehong.WeatherDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,13 +417,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WeatherDiary/WeatherDiary.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PCQ932FR3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherDiary/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app requires your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -412,9 +437,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.renewal.weatherDiary;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tehong.WeatherDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39C26DF6286C78030011F5FA /* Build configuration list for PBXNativeTarget "날씨장" */ = {
+		39C26DF6286C78030011F5FA /* Build configuration list for PBXNativeTarget "WeatherDiary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39C26DF7286C78030011F5FA /* Debug */,
