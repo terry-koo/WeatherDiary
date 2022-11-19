@@ -77,6 +77,14 @@ extension WeatherCondition {
         case .mostlyCloudy: return "구름많음"
         case .partlyCloudy: return "구름보통"
         case .smoky: return "껌껌"
+        case .breezy: return "산들바람"
+        case .windy: return "바람"
+        case .rain: return "비"
+        case .heavyRain: return "비콸콸"
+        case .freezingRain: return "얼음비"
+        case .snow: return "눈"
+        case .heavySnow: return "함박눈"
+        case .blowingSnow: return "눈보라"
         default: return "기타"
         }
     }
