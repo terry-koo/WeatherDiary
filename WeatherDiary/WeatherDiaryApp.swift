@@ -11,7 +11,13 @@ import SwiftUI
 struct WeatherDiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ZStack {
+                Image("background")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                MainView()
+            }
         }
     }
 }
