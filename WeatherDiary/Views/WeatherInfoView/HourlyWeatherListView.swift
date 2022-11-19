@@ -46,6 +46,7 @@ struct HourlyWeatherCellView: View {
                         .font(Font.weatherBody)
                         .padding(.bottom, 3)
                 }
+                .foregroundColor(Color.black)
             }
     }
 }

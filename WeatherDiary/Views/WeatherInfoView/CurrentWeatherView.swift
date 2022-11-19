@@ -19,9 +19,11 @@ struct CurrentWeatherView: View {
         VStack {
             Text("\(weather.currentWeather.date.basicWithDay)")
                 .font(Font.weatherTitle)
+                .foregroundColor(Color.black)
             HStack {
                 Text("\(locationManager.locality ?? "") \(weather.currentWeather.condition.koreanValue)")
                     .font(Font.weatherLargeTitle)
+                    .foregroundColor(Color.black)
                 Image(weather.currentWeather.condition.imageName)
                     .resizable()
                     .scaledToFit()
@@ -34,18 +36,21 @@ struct CurrentWeatherView: View {
             HStack {
                 Text("\(Int(weather.currentWeather.temperature.value))°C")
                     .font(Font.weatherLargeTitle)
+                    .foregroundColor(Color.black)
                     .padding(15)
                 VStack {
                     Text("최고")
                     Text("\(Int(weather.dailyForecast.first?.highTemperature.value ?? 0))°C")
                 }
                     .font(Font.weatherTitle)
+                    .foregroundColor(Color.black)
                     .padding(15)
                 VStack {
                     Text("최저")
                     Text("\(Int(weather.dailyForecast.first?.lowTemperature.value ?? 0))°C")
                 }
                     .font(Font.weatherTitle)
+                    .foregroundColor(Color.black)
                     .padding(15)
             }
         }

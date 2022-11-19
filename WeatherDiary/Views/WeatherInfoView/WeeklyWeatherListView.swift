@@ -38,6 +38,7 @@ struct WeeklyWeatherCellView: View {
                 Text("최저 \(Int(dayWeather.lowTemperature.value))°C 최고 \(Int(dayWeather.highTemperature.value))°C")
                     .font(Font.weatherBody)
             }
+            .foregroundColor(Color.black)
             .padding(.horizontal, 30)
             Image("weeklyLine")
         }

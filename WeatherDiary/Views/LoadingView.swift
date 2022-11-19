@@ -24,6 +24,7 @@ struct LoadingView: View {
             
             Text("엄마한테 날씨 물어보는 중...")
                 .font(Font.weatherTitle)
+                .foregroundColor(Color.black)
         
             Spacer()
         }
