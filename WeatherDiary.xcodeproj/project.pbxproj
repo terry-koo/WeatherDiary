@@ -17,6 +17,7 @@
 		A03EC6C42919375100AA3EEC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03EC6C32919375100AA3EEC /* MainView.swift */; };
 		A03EC6C62919470A00AA3EEC /* WeatherCondition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03EC6C52919470A00AA3EEC /* WeatherCondition+Extension.swift */; };
 		A09CBA6B291CA61100D31F5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A09CBA6D291CA61100D31F5F /* InfoPlist.strings */; };
+		A0ECC9CF293B2E8900DAF9FC /* LoadWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ECC9CE293B2E8900DAF9FC /* LoadWebView.swift */; };
 		A0F82286290D0AE700AF4448 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F82285290D0AE700AF4448 /* LoadingView.swift */; };
 		A0F82288290D0AFC00AF4448 /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F82287290D0AFC00AF4448 /* WeatherInfoView.swift */; };
 		A0F8228B290D0B2900AF4448 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8228A290D0B2900AF4448 /* CurrentWeatherView.swift */; };
@@ -40,6 +41,7 @@
 		A09CBA6C291CA61100D31F5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A09CBA6E291CA74E00D31F5F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0E06B9328704B92002521D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A0ECC9CE293B2E8900DAF9FC /* LoadWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWebView.swift; sourceTree = "<group>"; };
 		A0F82285290D0AE700AF4448 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A0F82287290D0AFC00AF4448 /* WeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoView.swift; sourceTree = "<group>"; };
 		A0F8228A290D0B2900AF4448 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A0F82285290D0AE700AF4448 /* LoadingView.swift */,
 				A03EC6C32919375100AA3EEC /* MainView.swift */,
 				39E8CD5128D591040087D0EF /* LicenseView.swift */,
+				A0ECC9CE293B2E8900DAF9FC /* LoadWebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				A03EC6C62919470A00AA3EEC /* WeatherCondition+Extension.swift in Sources */,
 				A0F8228D290D0B4100AF4448 /* HourlyWeatherListView.swift in Sources */,
 				A0F8228B290D0B2900AF4448 /* CurrentWeatherView.swift in Sources */,
+				A0ECC9CF293B2E8900DAF9FC /* LoadWebView.swift in Sources */,
 				A0F82288290D0AFC00AF4448 /* WeatherInfoView.swift in Sources */,
 				39E8CD5228D591040087D0EF /* LicenseView.swift in Sources */,
 				A0F82286290D0AE700AF4448 /* LoadingView.swift in Sources */,
@@ -383,7 +387,7 @@
 				CODE_SIGN_ENTITLEMENTS = WeatherDiary/WeatherDiary.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PCQ932FR3;
 				ENABLE_PREVIEWS = YES;
@@ -401,7 +405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tehong.WeatherDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -419,7 +423,7 @@
 				CODE_SIGN_ENTITLEMENTS = WeatherDiary/WeatherDiary.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PCQ932FR3;
 				ENABLE_PREVIEWS = YES;
@@ -437,7 +441,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tehong.WeatherDiary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

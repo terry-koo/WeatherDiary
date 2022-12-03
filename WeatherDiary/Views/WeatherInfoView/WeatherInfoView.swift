@@ -17,6 +17,8 @@ struct WeatherInfoView: View {
             CurrentWeatherView(weather: weather)
             HourlyWeatherListView(weather: weather)
             WeeklyWeatherListView(weather: weather)
+            LicenseView()
+                .padding(.vertical, 30)
         }
     }
 }
