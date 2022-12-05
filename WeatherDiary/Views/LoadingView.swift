@@ -27,6 +27,8 @@ struct LoadingView: View {
                 .foregroundColor(Color.black)
         
             Spacer()
+            LicenseView()
+                .padding(.bottom, 50)
         }
     }
 }

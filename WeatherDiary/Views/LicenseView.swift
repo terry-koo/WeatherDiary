@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct LicenseView: View {
+    
+    @State private var isLoadWebView = false
+    
     var body: some View {
         HStack(alignment: .center) {
             Text(" Weather")
                 .foregroundColor(Color.gray)
                 .font(Font.caption2)
-            NavigationLink(destination: LoadWebView(), label: {
+            Button(action: {
+                self.isLoadWebView = true
+            }, label: {
                 Text("data sorce")
                     .font(Font.caption2)
-            })
+            }).sheet(isPresented: $isLoadWebView) {
+                LoadWebView()
+            }
         }
     }
 }

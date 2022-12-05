@@ -15,14 +15,12 @@ struct MainView: View {
     @State private var weather: Weather?
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if let weather {
-                    WeatherInfoView(weather: weather)
-                        .environmentObject(locationManager)
-                } else {
-                    LoadingView()
-                }
+        VStack {
+            if let weather {
+                WeatherInfoView(weather: weather)
+                    .environmentObject(locationManager)
+            } else {
+                LoadingView()
             }
         }
         .task(id: locationManager.currentLocation) {

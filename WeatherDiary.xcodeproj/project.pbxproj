@@ -387,7 +387,7 @@
 				CODE_SIGN_ENTITLEMENTS = WeatherDiary/WeatherDiary.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PCQ932FR3;
 				ENABLE_PREVIEWS = YES;
@@ -423,7 +423,7 @@
 				CODE_SIGN_ENTITLEMENTS = WeatherDiary/WeatherDiary.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 8PCQ932FR3;
 				ENABLE_PREVIEWS = YES;
